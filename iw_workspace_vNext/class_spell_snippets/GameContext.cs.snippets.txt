@@ -1,0 +1,525 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs =====
+
+----- PATTERN: Requirements -----
+
+
+----- PATTERN: Requirement -----
+
+
+----- PATTERN: SpellBook -----
+
+
+----- PATTERN: SpellType -----
+
+
+----- PATTERN: TypeBehavior -----
+
+
+----- PATTERN: Class -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:1:using System;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:2:using 
+System.Collections.Generic;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:3:using CardGame;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:4:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:5:public static class 
+GameContext
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:6:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:7:	public const string 
+VARIABLE_COLOR = "<color=#e2b018>";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:9:	public const string 
+COLOR_CLOSE = "</color>";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:11:	private static 
+Dictionary<string, Variable> resource;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:13:	private static 
+Dictionary<string, Effect> effect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:14:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:15:	private static 
+Dictionary<string, Condition> condition;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:16:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:17:	public static Action 
+OnChange;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:18:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:19:	public static Variable 
+GetResource(string id)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:128:		
+condition.Add(ConditionNames.SpellUse.ToString(), 
+ConditionFactory.Create(ConditionFactory.SpellUse));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:129:		
+condition.Add(ConditionNames.Achieve.ToString(), ConditionFactory.Create(ConditionFactory.Achieve));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:130:		
+condition.Add(ConditionNames.GodLevel.ToString(), 
+ConditionFactory.Create(ConditionFactory.GodLevel));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:131:		
+condition.Add(ConditionNames.AscensionLevel.ToString(), 
+ConditionFactory.Create(ConditionFactory.AscentionLevel));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:132:		GenerateEffects();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:133:		foreach (object value in 
+Enum.GetValues(typeof(HeroesNames)))
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:134:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:135:			_ = value;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:136:			
+Statistic.ClassTime.Add(new VariableLong(0uL));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:137:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:138:		
+ContextAddTime(Statistic.ClassTime);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:139:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:140:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:141:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:142:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:143:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:144:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:145:	public static void 
+ContextAddBuilding(Building building)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:146:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:147:		
+resource.Add(ResourceType.Building.ToString() + "." + building.Tier + "." + ResourceBuild.Profit, 
+building.pps_per_building);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:148:		
+resource.Add(ResourceType.Building.ToString() + "." + building.Tier + "." + ResourceBuild.Cost, 
+building.base_cost);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:149:		
+resource.Add(ResourceType.Building.ToString() + "." + building.Tier + "." + ResourceBuild.Level, 
+building.Level);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:150:		
+resource.Add(ResourceType.Building.ToString() + "." + building.Tier + "." + 
+ResourceBuild.TotalLevel, building.TotalLevel);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:151:		
+resource.Add(ResourceType.Building.ToString() + "." + building.Tier + "." + 
+ResourceBuild.CostGrowth, building.cost_growth);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:152:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:153:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:154:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:155:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:156:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:157:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:158:	public static void 
+ContextAddTime(List<VariableLong> time)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:159:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:160:		string text = "Time.";
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:161:		resource.Add(text + 
+HeroesNames.Apprentice, Statistic.ClassTime[0]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:162:		resource.Add(text + 
+HeroesNames.Druid, Statistic.ClassTime[2]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:163:		resource.Add(text + 
+HeroesNames.Demonologist, Statistic.ClassTime[1]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:164:		resource.Add(text + 
+HeroesNames.Necromancer, Statistic.ClassTime[5]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:165:		resource.Add(text + 
+HeroesNames.Arcanist, Statistic.ClassTime[4]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:166:		resource.Add(text + 
+HeroesNames.Prodigy, Statistic.ClassTime[3]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:167:		resource.Add(text + 
+HeroesNames.Voidmancer, Statistic.ClassTime[7]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:168:		resource.Add(text + 
+HeroesNames.Exorcist, Statistic.ClassTime[6]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:169:		resource.Add(text + 
+HeroesNames.Chronomancer, Statistic.ClassTime[8]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:170:		resource.Add(text + 
+HeroesNames.Umbramancer, Statistic.ClassTime[9]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:171:		resource.Add(text + 
+HeroesNames.Alchemist, Statistic.ClassTime[10]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:172:		resource.Add(text + 
+HeroesNames.Ironsoul, Statistic.ClassTime[11]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:173:		resource.Add(text + 
+HeroesNames.Abolisher, Statistic.ClassTime[12]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:174:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:175:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:176:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:177:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:178:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:179:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:180:	public static void 
+AddPromoResources()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:181:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:182:		
+resource.Add(ResourcesGame.Relic.ToString(), GameManager.Instance.Relics.Relic);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:183:		
+resource.Add(ResourcesGame.AlterationSand.ToString(), GameManager.Instance.AlterationSand);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:184:		
+resource.Add(ResourcesGame.Nullifier.ToString(), GameManager.Instance.Nullifier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:185:		
+resource.Add(ResourcesGame.RedDust.ToString(), GameManager.Instance.Craft.Red);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:186:		
+resource.Add(ResourcesGame.GreenDust.ToString(), GameManager.Instance.Craft.Green);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:187:		
+resource.Add(ResourcesGame.BlueDust.ToString(), GameManager.Instance.Craft.Blue);
+
+
+
+
+----- PATTERN: HeroClass -----
+
+
+----- PATTERN: CurrentClass -----
+
+
+----- PATTERN: Temporalist -----
+
+
+----- PATTERN: Chronomancer -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:161:		resource.Add(text + 
+HeroesNames.Apprentice, Statistic.ClassTime[0]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:162:		resource.Add(text + 
+HeroesNames.Druid, Statistic.ClassTime[2]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:163:		resource.Add(text + 
+HeroesNames.Demonologist, Statistic.ClassTime[1]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:164:		resource.Add(text + 
+HeroesNames.Necromancer, Statistic.ClassTime[5]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:165:		resource.Add(text + 
+HeroesNames.Arcanist, Statistic.ClassTime[4]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:166:		resource.Add(text + 
+HeroesNames.Prodigy, Statistic.ClassTime[3]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:167:		resource.Add(text + 
+HeroesNames.Voidmancer, Statistic.ClassTime[7]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:168:		resource.Add(text + 
+HeroesNames.Exorcist, Statistic.ClassTime[6]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:169:		resource.Add(text + 
+HeroesNames.Chronomancer, Statistic.ClassTime[8]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:170:		resource.Add(text + 
+HeroesNames.Umbramancer, Statistic.ClassTime[9]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:171:		resource.Add(text + 
+HeroesNames.Alchemist, Statistic.ClassTime[10]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:172:		resource.Add(text + 
+HeroesNames.Ironsoul, Statistic.ClassTime[11]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:173:		resource.Add(text + 
+HeroesNames.Abolisher, Statistic.ClassTime[12]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:174:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:175:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:176:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:177:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:178:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:179:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:180:	public static void 
+AddPromoResources()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:181:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:182:		
+resource.Add(ResourcesGame.Relic.ToString(), GameManager.Instance.Relics.Relic);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:183:		
+resource.Add(ResourcesGame.AlterationSand.ToString(), GameManager.Instance.AlterationSand);
+
+
+
+
+----- PATTERN: Voidmancer -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:159:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:160:		string text = "Time.";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:161:		resource.Add(text + 
+HeroesNames.Apprentice, Statistic.ClassTime[0]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:162:		resource.Add(text + 
+HeroesNames.Druid, Statistic.ClassTime[2]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:163:		resource.Add(text + 
+HeroesNames.Demonologist, Statistic.ClassTime[1]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:164:		resource.Add(text + 
+HeroesNames.Necromancer, Statistic.ClassTime[5]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:165:		resource.Add(text + 
+HeroesNames.Arcanist, Statistic.ClassTime[4]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:166:		resource.Add(text + 
+HeroesNames.Prodigy, Statistic.ClassTime[3]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:167:		resource.Add(text + 
+HeroesNames.Voidmancer, Statistic.ClassTime[7]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:168:		resource.Add(text + 
+HeroesNames.Exorcist, Statistic.ClassTime[6]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:169:		resource.Add(text + 
+HeroesNames.Chronomancer, Statistic.ClassTime[8]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:170:		resource.Add(text + 
+HeroesNames.Umbramancer, Statistic.ClassTime[9]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:171:		resource.Add(text + 
+HeroesNames.Alchemist, Statistic.ClassTime[10]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:172:		resource.Add(text + 
+HeroesNames.Ironsoul, Statistic.ClassTime[11]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:173:		resource.Add(text + 
+HeroesNames.Abolisher, Statistic.ClassTime[12]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:174:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:175:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:176:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:177:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:178:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:179:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:180:	public static void 
+AddPromoResources()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:181:	{
+
+
+
+
+----- PATTERN: Unlock -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:238:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:239:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:240:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:241:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:242:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:243:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:244:	public static void 
+AddItems()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:245:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:246:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.UnlockedTotal, Statistic.UnlockedItems);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:247:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.Gathered, Statistic.ResourcesCollected);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:248:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.EDust, Statistic.EnchantingDustExile);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:249:		
+resource.Add(ResourceType.Items.ToString() + ".EDustRealm", Statistic.ResourcesRealm[4]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:250:		
+resource.Add(ResourceType.Items.ToString() + ".EDustTotal", Statistic.ResourcesTotal[4]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:251:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.GatherTotal, 
+Statistic.ResourcesCollectedTotal);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:252:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.GatherRealm, 
+Statistic.ResourcesCollectedRealm);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:253:		
+resource.Add(ResourceType.Items.ToString() + ".Common", Statistic.UnlockedByTiers[0]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:254:		
+resource.Add(ResourceType.Items.ToString() + ".Uncommon", Statistic.UnlockedByTiers[1]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:255:		
+resource.Add(ResourceType.Items.ToString() + ".Rare", Statistic.UnlockedByTiers[2]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:256:		
+resource.Add(ResourceType.Items.ToString() + ".Epic", Statistic.UnlockedByTiers[3]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:257:		
+resource.Add(ResourceType.Items.ToString() + ".Legendary", Statistic.UnlockedByTiers[4]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:258:		
+resource.Add(ResourceType.Items.ToString() + ".Mythic", Statistic.UnlockedByTiers[6]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:259:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:260:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:261:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:262:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:263:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:264:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:265:	public static void 
+ContextAddResource(string key, Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:266:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:267:		resource.Add(key, 
+variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:268:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:269:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:270:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:271:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:272:	}
+
+
+
+
+----- PATTERN: Available -----
+
+
+----- PATTERN: CanCast -----
+
+
+----- PATTERN: CanUse -----
+
+
+----- PATTERN: SpellSlot -----
+
+
+----- PATTERN: Spellbar -----
+
+
+----- PATTERN: GetSpell -----
+
+
+----- PATTERN: AddSpell -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:194:		
+resource.Add(ResourcesGame.Gilding.ToString(), GameManager.Instance.Gilding.Resource);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:195:		
+resource.Add(ResourcesGame.KeyShattered.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Shattered.ToString()]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:196:		
+resource.Add(ResourcesGame.KeyChaos.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Chaos.ToString()]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:197:		
+resource.Add(ResourcesGame.KeyCathedral.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Cathedral.ToString()]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:198:		
+resource.Add(ResourcesGame.KeyAltar.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Altar.ToString()]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:199:		
+resource.Add(ResourcesGame.KeyFragment.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Fragment.ToString()]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:200:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:201:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:202:	public static void 
+AddSpellContext()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:203:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:204:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.SpellCast, Statistic.CastSpell);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:205:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.SpellCastRealm, 
+Statistic.CastSpellRealm);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:206:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.SpellCastTotal, 
+Statistic.CastSpellTotal);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:207:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.Shards, Statistic.ShardsSession);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:208:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ShardsRealm, Statistic.ShardsRealm);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:209:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ShardsTotal, Statistic.ShardsTotal);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:210:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ScrollCount, 
+GameManager.Instance.Scrolls.ScrollCount);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:211:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.MaxCharge, 
+GameManager.Instance.Scrolls.MaxCharge);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:212:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.BaseProgress, 
+GameManager.Instance.Scrolls.ShardsPassive);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:213:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ClickProgress, 
+GameManager.Instance.Scrolls.ShardsPerClick);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:214:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.PoolProgress, 
+GameManager.Instance.Scrolls.ShardsPool.Efficiency);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:215:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.PoolCapacity, 
+GameManager.Instance.Scrolls.ShardsPool.Capacity);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:216:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.AutoCastCount, 
+GameManager.Instance.Scrolls.AutoCastCount);
+
+
+
+
+----- PATTERN: RemoveSpell -----
+
+
+----- PATTERN: Key -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:182:		
+resource.Add(ResourcesGame.Relic.ToString(), GameManager.Instance.Relics.Relic);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:183:		
+resource.Add(ResourcesGame.AlterationSand.ToString(), GameManager.Instance.AlterationSand);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:184:		
+resource.Add(ResourcesGame.Nullifier.ToString(), GameManager.Instance.Nullifier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:185:		
+resource.Add(ResourcesGame.RedDust.ToString(), GameManager.Instance.Craft.Red);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:186:		
+resource.Add(ResourcesGame.GreenDust.ToString(), GameManager.Instance.Craft.Green);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:187:		
+resource.Add(ResourcesGame.BlueDust.ToString(), GameManager.Instance.Craft.Blue);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:188:		
+resource.Add(ResourcesGame.YellowDust.ToString(), GameManager.Instance.Craft.Yellow);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:189:		
+resource.Add(ResourcesGame.EnchantingDust.ToString(), GameManager.Instance.Craft.EnchantingDust);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:190:		
+resource.Add(ResourcesGame.TrialRune.ToString(), GameManager.Instance.Trials.Keys);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:191:		
+resource.Add(ResourcesGame.GCat.ToString(), GameManager.Instance.BuildingManager.FreeGreenCatalysts);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:192:		
+resource.Add(ResourcesGame.BCat.ToString(), GameManager.Instance.BuildingManager.FreeBlueCatalysts);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:193:		
+resource.Add(ResourcesGame.RCat.ToString(), GameManager.Instance.BuildingManager.FreeRedCatalysts);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:194:		
+resource.Add(ResourcesGame.Gilding.ToString(), GameManager.Instance.Gilding.Resource);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:195:		
+resource.Add(ResourcesGame.KeyShattered.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Shattered.ToString()]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:196:		
+resource.Add(ResourcesGame.KeyChaos.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Chaos.ToString()]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:197:		
+resource.Add(ResourcesGame.KeyCathedral.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Cathedral.ToString()]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:198:		
+resource.Add(ResourcesGame.KeyAltar.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Altar.ToString()]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:199:		
+resource.Add(ResourcesGame.KeyFragment.ToString(), 
+ExpeditionManager.Instance.Keys.keyMap[Keys.Fragment.ToString()]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:200:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:201:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:202:	public static void 
+AddSpellContext()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:203:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:204:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.SpellCast, Statistic.CastSpell);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:205:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.SpellCastRealm, 
+Statistic.CastSpellRealm);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:206:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.SpellCastTotal, 
+Statistic.CastSpellTotal);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:207:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.Shards, Statistic.ShardsSession);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:208:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ShardsRealm, Statistic.ShardsRealm);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:209:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ShardsTotal, Statistic.ShardsTotal);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:210:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ScrollCount, 
+GameManager.Instance.Scrolls.ScrollCount);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:211:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.MaxCharge, 
+GameManager.Instance.Scrolls.MaxCharge);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:212:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.BaseProgress, 
+GameManager.Instance.Scrolls.ShardsPassive);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:213:		
+resource.Add(ResourceType.Spell.ToString() + "." + ResourceSpell.ClickProgress, 
+GameManager.Instance.Scrolls.ShardsPerClick);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:238:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:239:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:240:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:241:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:242:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:243:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:244:	public static void 
+AddItems()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:245:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:246:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.UnlockedTotal, Statistic.UnlockedItems);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:247:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.Gathered, Statistic.ResourcesCollected);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:248:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.EDust, Statistic.EnchantingDustExile);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:249:		
+resource.Add(ResourceType.Items.ToString() + ".EDustRealm", Statistic.ResourcesRealm[4]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:250:		
+resource.Add(ResourceType.Items.ToString() + ".EDustTotal", Statistic.ResourcesTotal[4]);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:251:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.GatherTotal, 
+Statistic.ResourcesCollectedTotal);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:252:		
+resource.Add(ResourceType.Items.ToString() + "." + ItemKeys.GatherRealm, 
+Statistic.ResourcesCollectedRealm);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:253:		
+resource.Add(ResourceType.Items.ToString() + ".Common", Statistic.UnlockedByTiers[0]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:254:		
+resource.Add(ResourceType.Items.ToString() + ".Uncommon", Statistic.UnlockedByTiers[1]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:255:		
+resource.Add(ResourceType.Items.ToString() + ".Rare", Statistic.UnlockedByTiers[2]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:256:		
+resource.Add(ResourceType.Items.ToString() + ".Epic", Statistic.UnlockedByTiers[3]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:257:		
+resource.Add(ResourceType.Items.ToString() + ".Legendary", Statistic.UnlockedByTiers[4]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:258:		
+resource.Add(ResourceType.Items.ToString() + ".Mythic", Statistic.UnlockedByTiers[6]);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:259:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:260:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:261:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:262:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:263:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:264:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:265:	public static void 
+ContextAddResource(string key, Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:266:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:267:		resource.Add(key, 
+variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:268:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:269:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:270:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:271:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:272:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameContext.cs:273:}
+
+
+

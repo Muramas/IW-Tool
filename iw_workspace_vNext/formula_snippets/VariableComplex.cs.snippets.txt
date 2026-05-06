@@ -1,0 +1,366 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+
+----- PATTERN: Efficiency -----
+
+
+----- PATTERN: gild -----
+
+
+----- PATTERN: Gild -----
+
+
+----- PATTERN: Apply -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:115:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:116:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:117:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:118:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:119:			OnChangeVector(0.0, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:120:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:121:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:122:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:123:	public BigNumber 
+ApplyModOnVar(BigNumber target)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:124:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:125:		return (target + add) * mult;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:126:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:127:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:128:	public BigNumber 
+ApplyComponents(BigNumber component)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:129:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:130:		return (component + _value + add) * 
+mult;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:131:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:132:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:133:	public VariableComplex Clone()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:134:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:135:		return new VariableComplex(_value)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:136:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:137:			add = add,
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:138:			mult = mult
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:139:		};
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:140:	}
+
+
+
+
+----- PATTERN: Delete -----
+
+
+----- PATTERN: Update -----
+
+
+----- PATTERN: Change -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:3:public class VariableComplex : Variable
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:4:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:5:	protected BigNumber _value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:7:	public BigNumber add;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:9:	public BigNumber mult;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:10:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:11:	public Action<BigNumber, BigNumber> 
+OnChangeVector;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:13:	public BigNumber GetInternalValue => 
+_value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:14:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:15:	public float ValueFloat => 
+Value.ToFloat();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:16:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:17:	public override BigNumber Value => 
+(_value + add) * mult;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:18:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:19:	public void ChangeValue(BigNumber a, 
+BigNumber m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:20:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:21:		_value += a;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:22:		_value *= m;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:23:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:24:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:25:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:26:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:27:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:28:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:29:			OnChangeAdd(a);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:30:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:31:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:32:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:33:			OnChangeVector(a, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:34:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:35:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:36:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:37:	public override void SetValue(BigNumber 
+v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:38:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:39:		_value = v;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:40:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:41:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:42:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:43:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:44:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:45:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:46:	public string debug()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:47:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:48:		return 
+_value.CheckAndReturn().ToReadableString() + " " + add.CheckAndReturn().ToReadableString() + " " + 
+mult.CheckAndReturn().ToReadableString("F4");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:49:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:50:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:51:	public void Reset(BigNumber _v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:52:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:53:		_value = _v;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:54:		add = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:71:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:72:	public VariableComplex(BigNumber v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:73:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:74:		_value = v;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:75:		add = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:76:		mult = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:77:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:78:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:79:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:80:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:81:		add += addendum;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:82:		mult *= multiplier;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:83:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:84:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:85:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:86:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:87:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:88:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:89:			OnChangeAdd(addendum);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:90:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:91:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:92:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:93:			OnChangeVector(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:94:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:95:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:96:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:97:	public void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:98:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:99:		add = a;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:100:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:101:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:102:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:103:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:104:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:105:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:106:			OnChangeVector(a, 1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:107:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:108:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:109:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:110:	public void SetMult(BigNumber m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:111:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:112:		mult = m;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:113:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:114:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:115:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:116:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:117:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:118:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:119:			OnChangeVector(0.0, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:120:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:121:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:122:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:123:	public BigNumber 
+ApplyModOnVar(BigNumber target)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:124:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:125:		return (target + add) * mult;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:126:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:127:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:128:	public BigNumber 
+ApplyComponents(BigNumber component)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:129:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:130:		return (component + _value + add) * 
+mult;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:131:	}
+
+
+
+
+----- PATTERN: SetEfficiency -----
+
+
+----- PATTERN: SetGilding -----
+
+
+----- PATTERN: addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:71:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:72:	public VariableComplex(BigNumber v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:73:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:74:		_value = v;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:75:		add = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:76:		mult = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:77:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:78:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:79:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:80:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:81:		add += addendum;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:82:		mult *= multiplier;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:83:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:84:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:85:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:86:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:87:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:88:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:89:			OnChangeAdd(addendum);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:90:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:91:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:92:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:93:			OnChangeVector(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:94:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:95:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:96:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:97:	public void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:98:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:99:		add = a;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:100:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:101:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:102:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:103:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:104:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:105:		{
+
+
+
+
+----- PATTERN: multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:71:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:72:	public VariableComplex(BigNumber v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:73:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:74:		_value = v;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:75:		add = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:76:		mult = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:77:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:78:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:79:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:80:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:81:		add += addendum;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:82:		mult *= multiplier;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:83:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:84:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:85:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:86:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:87:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:88:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:89:			OnChangeAdd(addendum);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:90:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:91:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:92:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:93:			OnChangeVector(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:94:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:95:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:96:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:97:	public void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:98:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:99:		add = a;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:100:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:101:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:102:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:103:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:104:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:105:		{
+
+
+
+
+----- PATTERN: Addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:71:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:72:	public VariableComplex(BigNumber v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:73:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:74:		_value = v;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:75:		add = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:76:		mult = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:77:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:78:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:79:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:80:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:81:		add += addendum;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:82:		mult *= multiplier;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:83:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:84:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:85:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:86:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:87:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:88:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:89:			OnChangeAdd(addendum);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:90:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:91:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:92:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:93:			OnChangeVector(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:94:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:95:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:96:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:97:	public void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:98:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:99:		add = a;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:100:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:101:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:102:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:103:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:104:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:105:		{
+
+
+
+
+----- PATTERN: Multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:71:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:72:	public VariableComplex(BigNumber v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:73:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:74:		_value = v;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:75:		add = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:76:		mult = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:77:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:78:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:79:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:80:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:81:		add += addendum;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:82:		mult *= multiplier;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:83:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:84:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:85:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:86:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:87:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:88:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:89:			OnChangeAdd(addendum);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:90:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:91:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:92:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:93:			OnChangeVector(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:94:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:95:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:96:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:97:	public void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:98:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:99:		add = a;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:100:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:101:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:102:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:103:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:104:		if (OnChangeVector != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableComplex.cs:105:		{
+
+
+

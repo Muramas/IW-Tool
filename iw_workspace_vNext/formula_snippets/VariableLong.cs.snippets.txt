@@ -1,0 +1,279 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+
+----- PATTERN: Efficiency -----
+
+
+----- PATTERN: gild -----
+
+
+----- PATTERN: Gild -----
+
+
+----- PATTERN: Apply -----
+
+
+----- PATTERN: Delete -----
+
+
+----- PATTERN: Update -----
+
+
+----- PATTERN: Change -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:1:using System;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:2:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:3:public class VariableLong : Variable
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:4:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:5:	protected ulong _value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:6:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:7:	public Action<int> OnChangeInt;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:9:	public override BigNumber Value => new 
+BigNumber(_value);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:11:	public ulong ValueInt
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:12:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:13:		get
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:14:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:15:			return _value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:16:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:17:		set
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:18:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:19:			_value = value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:23:	public VariableLong(ulong v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:24:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:25:		_value = v;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:26:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:27:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:28:	public void SetValue(ulong v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:29:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:30:		_value = v;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:31:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:32:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:33:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:34:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:35:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:36:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:37:	public void Change(int ad)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:38:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:39:		if (_value > (ulong)(-1 - (uint)ad))
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:40:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:41:			_value = ulong.MaxValue;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:42:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:43:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:44:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:45:			_value += (uint)ad;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:46:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:47:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:48:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:49:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:50:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:51:		if (OnChangeInt != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:52:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:53:			OnChangeInt(ad);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:54:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:55:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:56:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:57:			OnChangeAdd(ad);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:58:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:59:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:60:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:61:	public void Change(ulong ad)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:62:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:63:		if (_value > (ulong)(-1L - (long)ad))
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:64:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:65:			_value = ulong.MaxValue;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:66:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:67:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:68:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:69:			_value += ad;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:70:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:71:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:72:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:73:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:74:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:75:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:76:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:77:			OnChangeAdd(ad);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:78:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:79:		if (OnChangeInt != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:80:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:81:			OnChangeInt((int)ad);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:82:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:83:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:84:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:85:	public void Decrease(int ad)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:86:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:87:		if (_value < (uint)ad)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:88:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:89:			_value = 0uL;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:90:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:91:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:92:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:93:			_value -= (uint)ad;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:94:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:95:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:96:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:97:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:98:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:99:		if (OnChangeInt != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:100:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:101:			OnChangeInt(-ad);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:102:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:103:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:104:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:105:			OnChangeAdd(-ad);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:106:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:107:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:108:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:109:	public void Decrease(ulong ad)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:110:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:111:		_value -= ad;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:112:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:113:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:114:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:115:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:116:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:117:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:118:			OnChangeAdd(-new BigNumber(ad));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:119:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:120:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:121:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:122:	public void Change(int ad, int m = 1)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:123:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:124:		ulong value = _value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:125:		_value = (_value + (uint)ad) * (uint)m;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:126:		if (OnChange != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:127:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:128:			OnChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:129:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:130:		if (OnChangeInt != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:131:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:132:			OnChangeInt((int)(_value - value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:133:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:134:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:135:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:136:			OnChangeAdd(new BigNumber(_value) - new 
+BigNumber(value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:137:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:138:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:139:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:140:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:141:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:142:		int ad = (int)addendum.ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:143:		int m = (int)multiplier.ToDouble();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:144:		Change(ad, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:145:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:146:}
+
+
+
+
+----- PATTERN: SetEfficiency -----
+
+
+----- PATTERN: SetGilding -----
+
+
+----- PATTERN: addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:132:			OnChangeInt((int)(_value - value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:133:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:134:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:135:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:136:			OnChangeAdd(new BigNumber(_value) - new 
+BigNumber(value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:137:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:138:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:139:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:140:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:141:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:142:		int ad = (int)addendum.ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:143:		int m = (int)multiplier.ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:144:		Change(ad, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:145:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:146:}
+
+
+
+
+----- PATTERN: multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:132:			OnChangeInt((int)(_value - value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:133:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:134:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:135:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:136:			OnChangeAdd(new BigNumber(_value) - new 
+BigNumber(value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:137:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:138:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:139:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:140:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:141:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:142:		int ad = (int)addendum.ToDouble();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:143:		int m = (int)multiplier.ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:144:		Change(ad, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:145:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:146:}
+
+
+
+
+----- PATTERN: Addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:132:			OnChangeInt((int)(_value - value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:133:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:134:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:135:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:136:			OnChangeAdd(new BigNumber(_value) - new 
+BigNumber(value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:137:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:138:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:139:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:140:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:141:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:142:		int ad = (int)addendum.ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:143:		int m = (int)multiplier.ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:144:		Change(ad, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:145:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:146:}
+
+
+
+
+----- PATTERN: Multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:132:			OnChangeInt((int)(_value - value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:133:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:134:		if (OnChangeAdd != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:135:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:136:			OnChangeAdd(new BigNumber(_value) - new 
+BigNumber(value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:137:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:138:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:139:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:140:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:141:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:142:		int ad = (int)addendum.ToDouble();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:143:		int m = (int)multiplier.ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:144:		Change(ad, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:145:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\VariableLong.cs:146:}
+
+
+

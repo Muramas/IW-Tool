@@ -1,0 +1,10 @@
+using IdleWizard.BuildTool.Core.Resources;
+
+namespace IdleWizard.BuildTool.Core.Evaluation;
+
+public sealed class CalculatorContext
+{
+    public ResourceRegistry Resources { get; } = new();
+
+    public EvaluationReport Report { get; } = new();
+}

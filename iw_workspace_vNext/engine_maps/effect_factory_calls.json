@@ -1,0 +1,835 @@
+{
+  "files": [
+    {
+      "file": "Scripts\\Assembly-CSharp\\EffectFactory.cs",
+      "classes": [
+        {
+          "name": "EffectFactory",
+          "inherits": ""
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "Effect",
+          "name": "Create",
+          "params": "effect_action apply, effect_action delete, effect_preview preview = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "Linear",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w = null, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "LinearDelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w = null, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "LinearPreview",
+          "params": "BigNumber a, BigNumber m, Variable w = null, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "Power",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "PowerDelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "PowerPreview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "PowerA",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "PowerADelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "PowerAPreview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "AdditivePower",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "AdditivePowerDelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "AdditivePowerPreview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "Log10",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "Log10Delete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "Log10Preview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "Ln",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "LnDelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "LnPreview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "LogA",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "LogADelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "LogAPreview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "PowerIntW",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "PowerIntWDelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "PowerIntWPreview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "PowerW",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "void",
+          "name": "PowerWDelete",
+          "params": "Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null"
+        },
+        {
+          "visibility": "public",
+          "static": true,
+          "return": "string",
+          "name": "PowerWPreview",
+          "params": "BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false"
+        }
+      ],
+      "constructs_effect_classes": [
+        "BigNumber"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\SimpleEffect.cs",
+      "classes": [
+        {
+          "name": "SimpleEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "BigNumber",
+          "name": "GetAdd",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "GetParameterDebugString",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "GetDebugCheck",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "Preview",
+          "params": "BigNumber a, BigNumber m, Variable parameter"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "Preview",
+          "params": "string key, bool isIgnoreEff"
+        }
+      ],
+      "constructs_effect_classes": [
+        "BigNumber",
+        "VariableBignumber"
+      ],
+      "switch_cases": [
+        "\"\"",
+        "\"%\"",
+        "\"&\"",
+        "\"@\"",
+        "\"c\"",
+        "\"e\"",
+        "\"int\"",
+        "\"k\"",
+        "\"p\"",
+        "\"q\"",
+        "\"t\""
+      ]
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\CombineEffect.cs",
+      "classes": [
+        {
+          "name": "CombineEffect",
+          "inherits": "IEffect"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "AddEffect",
+          "params": "BigNumber a, BigNumber m, Variable w = null, Effect effect = null, bool eff = true, float dimishing = 1f, float pow_diminish = 1f"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "SetEfficiency",
+          "params": "Variable eff"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "SetGilding",
+          "params": "Variable eff"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Apply",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Delete",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Update",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "Preview",
+          "params": "string key = \"\""
+        }
+      ],
+      "constructs_effect_classes": [
+        "BigNumber",
+        "SimpleEffect"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\ActionEffect.cs",
+      "classes": [
+        {
+          "name": "ActionEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\AdditionalSpellEffect.cs",
+      "classes": [
+        {
+          "name": "AdditionalSpellEffect",
+          "inherits": ""
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "BigNumber",
+          "name": "GetBonus",
+          "params": "int rank"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "UpdateEffect",
+          "params": "int rank"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "GetDescription",
+          "params": "int rankCurrent, int rankNext"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "GetDescription",
+          "params": ""
+        }
+      ],
+      "constructs_effect_classes": [
+        "BigNumber"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\AdditiveEffect.cs",
+      "classes": [
+        {
+          "name": "AdditiveEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "ChangeLevel",
+          "params": "int lvl"
+        }
+      ],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\CharacterEffect.cs",
+      "classes": [
+        {
+          "name": "CharacterEffect",
+          "inherits": ""
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "SetIsDump",
+          "params": "bool isDump"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Start",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Stop",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Apply",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "BigNumber",
+          "name": "GetMainBonus",
+          "params": ""
+        },
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "void",
+          "name": "apply",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Delete",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Update",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "Preview",
+          "params": ""
+        }
+      ],
+      "constructs_effect_classes": [
+        "Action"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\Effect.cs",
+      "classes": [
+        {
+          "name": "Effect",
+          "inherits": ""
+        }
+      ],
+      "methods": [],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\ExponentEffect.cs",
+      "classes": [
+        {
+          "name": "ExponentEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "ChangeLevel",
+          "params": "int lvl"
+        }
+      ],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\HolyFervorEffect.cs",
+      "classes": [
+        {
+          "name": "HolyFervorEffect",
+          "inherits": "EffectDiminishing, IOfflineEffect"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Offline",
+          "params": "BigNumber casts"
+        }
+      ],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\IEffect.cs",
+      "classes": [],
+      "methods": [],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\IOfflineEffect.cs",
+      "classes": [],
+      "methods": [],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\IronSoulPOSEffect.cs",
+      "classes": [
+        {
+          "name": "IronSoulPOSEffect",
+          "inherits": "PowerOfSacrificeEffect"
+        }
+      ],
+      "methods": [],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\MultiChargesEffect.cs",
+      "classes": [
+        {
+          "name": "MultiChargesEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "int",
+          "name": "GetChargesPerCast",
+          "params": ""
+        }
+      ],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\PowerOfSacrificeEffect.cs",
+      "classes": [
+        {
+          "name": "PowerOfSacrificeEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\RelentlessnessEffect.cs",
+      "classes": [
+        {
+          "name": "RelentlessnessEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [],
+      "constructs_effect_classes": [],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\RoasterEffect.cs",
+      "classes": [
+        {
+          "name": "RoasterEffect",
+          "inherits": "MonoBehaviour"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "void",
+          "name": "Awake",
+          "params": ""
+        },
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "void",
+          "name": "OnEnable",
+          "params": ""
+        },
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "void",
+          "name": "Update",
+          "params": ""
+        },
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "float",
+          "name": "GetAlpha",
+          "params": "Solstice.Keys key"
+        },
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "void",
+          "name": "ChangeState",
+          "params": ""
+        },
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "void",
+          "name": "SetActive",
+          "params": "bool state"
+        }
+      ],
+      "constructs_effect_classes": [
+        "Action",
+        "Color"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\SEEffect.cs",
+      "classes": [
+        {
+          "name": "SEEffect",
+          "inherits": "EffectInstant"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "int",
+          "name": "GetCollected",
+          "params": ""
+        },
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "void",
+          "name": "add_collect",
+          "params": ""
+        }
+      ],
+      "constructs_effect_classes": [
+        "BigNumber"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\SimpleNegativeEffect.cs",
+      "classes": [
+        {
+          "name": "SimpleNegativeEffect",
+          "inherits": "SimpleEffect"
+        }
+      ],
+      "methods": [],
+      "constructs_effect_classes": [
+        "VariableBignumber"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\TAEffect.cs",
+      "classes": [
+        {
+          "name": "TAEffect",
+          "inherits": "SimpleEffect"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "private",
+          "static": false,
+          "return": "bool",
+          "name": "isActiveInca",
+          "params": ""
+        }
+      ],
+      "constructs_effect_classes": [
+        "VariableBignumber"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\TimeScaleEffect.cs",
+      "classes": [
+        {
+          "name": "TimeScaleEffect",
+          "inherits": "EffectDiminishing"
+        }
+      ],
+      "methods": [],
+      "constructs_effect_classes": [
+        "VariableFloat"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\TradeVoidToShardsEffect.cs",
+      "classes": [
+        {
+          "name": "TradeVoidToShardsEffect",
+          "inherits": "IEffect"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Apply",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "SetEfficiency",
+          "params": "Variable eff = null"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "SetGilding",
+          "params": "Variable eff = null"
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Delete",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Update",
+          "params": ""
+        },
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "string",
+          "name": "Preview",
+          "params": "string key = \"\""
+        }
+      ],
+      "constructs_effect_classes": [
+        "EffectAddShardPeriodic",
+        "VariableBignumber"
+      ],
+      "switch_cases": []
+    },
+    {
+      "file": "Scripts\\Assembly-CSharp\\WarpEffect.cs",
+      "classes": [
+        {
+          "name": "WarpEffect",
+          "inherits": "EffectDiminishing, IOfflineEffect"
+        }
+      ],
+      "methods": [
+        {
+          "visibility": "public",
+          "static": false,
+          "return": "void",
+          "name": "Offline",
+          "params": "BigNumber casts"
+        }
+      ],
+      "constructs_effect_classes": [
+        "VariableBignumber"
+      ],
+      "switch_cases": []
+    }
+  ]
+}

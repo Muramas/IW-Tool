@@ -1,0 +1,557 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs =====
+
+----- PATTERN: diminish -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:175:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:176:				key = m.ToString()[2].ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:177:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:178:			num = int.Parse(m.ToString()[1].ToString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:179:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:180:		SimpleEffect simpleEffect = Effects[num - 1] 
+as SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:181:		string text2 = simpleEffect.Preview(key);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:182:		string text3 = (flag ? "+" : string.Empty) + 
+text2;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:183:		if (Settings.ColoredTips && 
+simpleEffect.pow_diminishing != 0f)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:184:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:185:			text3 = "<color=#e2b018>" + text3 + 
+"</color>";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:186:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:187:		if (simpleEffect.GetEfficiency().Value > 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:188:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:189:			text3 = text3 + " (+" + 
+simpleEffect.Preview("e") + ")";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:190:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:191:		return text3;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:192:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:193:}
+
+
+
+
+----- PATTERN: Diminish -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:175:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:176:				key = m.ToString()[2].ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:177:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:178:			num = int.Parse(m.ToString()[1].ToString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:179:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:180:		SimpleEffect simpleEffect = Effects[num - 1] 
+as SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:181:		string text2 = simpleEffect.Preview(key);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:182:		string text3 = (flag ? "+" : string.Empty) + 
+text2;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:183:		if (Settings.ColoredTips && 
+simpleEffect.pow_diminishing != 0f)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:184:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:185:			text3 = "<color=#e2b018>" + text3 + 
+"</color>";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:186:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:187:		if (simpleEffect.GetEfficiency().Value > 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:188:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:189:			text3 = text3 + " (+" + 
+simpleEffect.Preview("e") + ")";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:190:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:191:		return text3;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:192:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:193:}
+
+
+
+
+----- PATTERN: efficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:84:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:85:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:86:	public void SetEfficiency(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:87:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:88:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:89:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:90:			effect.SetEfficiency(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:91:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:92:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:93:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:94:	public virtual int GetReqs(Attributes key)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:95:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:96:		string attr = key.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:97:		return Reqs.Find((ItemReqs x) => x.Name == 
+attr)?.Value ?? 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:98:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:99:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:100:	public bool CheckReqs()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:101:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:102:		if (Reqs == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:138:		return UpgradeCost;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:139:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:140:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:141:	public List<ItemReqs> GetReqs()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:142:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:143:		return Reqs;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:144:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:145:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:146:	public string PreviewEfficiency()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:147:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:148:		return Effects[0].Preview("e");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:149:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:150:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:151:	public virtual string GetDescription()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:152:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:153:		string input = 
+TranslationManager.Instance.Process(Description);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:154:		return new Regex(pattern).Replace(input, 
+ReplaceMatch);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:155:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:156:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:157:	protected virtual string ReplaceMatch(Match m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:158:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:179:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:180:		SimpleEffect simpleEffect = Effects[num - 1] 
+as SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:181:		string text2 = simpleEffect.Preview(key);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:182:		string text3 = (flag ? "+" : string.Empty) + 
+text2;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:183:		if (Settings.ColoredTips && 
+simpleEffect.pow_diminishing != 0f)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:184:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:185:			text3 = "<color=#e2b018>" + text3 + 
+"</color>";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:186:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:187:		if (simpleEffect.GetEfficiency().Value > 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:188:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:189:			text3 = text3 + " (+" + 
+simpleEffect.Preview("e") + ")";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:190:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:191:		return text3;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:192:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:193:}
+
+
+
+
+----- PATTERN: Efficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:84:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:85:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:86:	public void SetEfficiency(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:87:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:88:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:89:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:90:			effect.SetEfficiency(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:91:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:92:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:93:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:94:	public virtual int GetReqs(Attributes key)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:95:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:96:		string attr = key.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:97:		return Reqs.Find((ItemReqs x) => x.Name == 
+attr)?.Value ?? 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:98:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:99:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:100:	public bool CheckReqs()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:101:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:102:		if (Reqs == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:138:		return UpgradeCost;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:139:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:140:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:141:	public List<ItemReqs> GetReqs()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:142:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:143:		return Reqs;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:144:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:145:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:146:	public string PreviewEfficiency()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:147:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:148:		return Effects[0].Preview("e");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:149:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:150:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:151:	public virtual string GetDescription()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:152:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:153:		string input = 
+TranslationManager.Instance.Process(Description);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:154:		return new Regex(pattern).Replace(input, 
+ReplaceMatch);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:155:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:156:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:157:	protected virtual string ReplaceMatch(Match m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:158:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:179:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:180:		SimpleEffect simpleEffect = Effects[num - 1] 
+as SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:181:		string text2 = simpleEffect.Preview(key);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:182:		string text3 = (flag ? "+" : string.Empty) + 
+text2;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:183:		if (Settings.ColoredTips && 
+simpleEffect.pow_diminishing != 0f)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:184:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:185:			text3 = "<color=#e2b018>" + text3 + 
+"</color>";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:186:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:187:		if (simpleEffect.GetEfficiency().Value > 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:188:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:189:			text3 = text3 + " (+" + 
+simpleEffect.Preview("e") + ")";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:190:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:191:		return text3;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:192:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:193:}
+
+
+
+
+----- PATTERN: gild -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:70:					Variable parameter = simpleEffect.parameter;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:71:					parameter.OnChange = 
+(Action)Delegate.Remove(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:72:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:73:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:74:			effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:75:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:77:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:84:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:85:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:86:	public void SetEfficiency(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:87:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:88:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:89:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:90:			effect.SetEfficiency(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:91:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:92:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:93:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:94:	public virtual int GetReqs(Attributes key)
+
+
+
+
+----- PATTERN: Gild -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:70:					Variable parameter = simpleEffect.parameter;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:71:					parameter.OnChange = 
+(Action)Delegate.Remove(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:72:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:73:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:74:			effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:75:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:77:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:84:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:85:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:86:	public void SetEfficiency(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:87:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:88:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:89:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:90:			effect.SetEfficiency(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:91:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:92:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:93:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:94:	public virtual int GetReqs(Attributes key)
+
+
+
+
+----- PATTERN: Apply -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:12:	public List<ItemReqs> Reqs;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:13:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:14:	public List<IEffect> Effects;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:15:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:16:	public bool applied;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:18:	protected static string pattern = 
+"\\+{0,1}#\\d{1}[amtpqkwc@%&]{0,1}";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:19:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:20:	public virtual void Apply()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:21:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:22:		if (applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:23:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:24:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:25:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:26:		applied = true;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:27:		for (int i = 0; i < Effects.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:28:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:29:			IEffect effect = Effects[i];
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:30:			effect.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:31:			if (effect is SimpleEffect)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:32:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:33:				SimpleEffect simpleEffect = effect as 
+SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:34:				if (simpleEffect.parameter != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:35:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:36:					Variable parameter = simpleEffect.parameter;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:37:					parameter.OnChange = 
+(Action)Delegate.Combine(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:38:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:39:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:40:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:41:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:42:
+
+
+
+
+----- PATTERN: Delete -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:47:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:48:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:49:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:50:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:51:			effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:52:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:53:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:54:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:55:	public virtual void Delete()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:56:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:57:		if (!applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:58:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:59:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:60:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:61:		applied = false;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:62:		for (int i = 0; i < Effects.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:63:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:64:			IEffect effect = Effects[i];
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:65:			if (effect is SimpleEffect)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:66:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:67:				SimpleEffect simpleEffect = effect as 
+SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:68:				if (simpleEffect.parameter != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:69:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:70:					Variable parameter = simpleEffect.parameter;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:71:					parameter.OnChange = 
+(Action)Delegate.Remove(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:72:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:73:			}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:74:			effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:75:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:77:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:84:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:85:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:86:	public void SetEfficiency(Variable variable)
+
+
+
+
+----- PATTERN: Update -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:29:			IEffect effect = Effects[i];
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:30:			effect.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:31:			if (effect is SimpleEffect)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:32:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:33:				SimpleEffect simpleEffect = effect as 
+SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:34:				if (simpleEffect.parameter != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:35:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:36:					Variable parameter = simpleEffect.parameter;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:37:					parameter.OnChange = 
+(Action)Delegate.Combine(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:38:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:39:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:40:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:41:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:42:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:43:	public virtual void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:44:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:45:		if (!applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:46:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:47:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:48:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:49:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:50:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:51:			effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:52:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:53:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:54:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:55:	public virtual void Delete()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:56:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:57:		if (!applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:58:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:59:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:60:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:61:		applied = false;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:62:		for (int i = 0; i < Effects.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:63:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:64:			IEffect effect = Effects[i];
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:65:			if (effect is SimpleEffect)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:66:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:67:				SimpleEffect simpleEffect = effect as 
+SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:68:				if (simpleEffect.parameter != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:69:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:70:					Variable parameter = simpleEffect.parameter;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:71:					parameter.OnChange = 
+(Action)Delegate.Remove(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:72:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:73:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:74:			effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:75:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:77:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+
+
+
+
+----- PATTERN: Change -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:29:			IEffect effect = Effects[i];
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:30:			effect.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:31:			if (effect is SimpleEffect)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:32:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:33:				SimpleEffect simpleEffect = effect as 
+SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:34:				if (simpleEffect.parameter != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:35:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:36:					Variable parameter = simpleEffect.parameter;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:37:					parameter.OnChange = 
+(Action)Delegate.Combine(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:38:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:39:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:40:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:41:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:42:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:43:	public virtual void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:44:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:45:		if (!applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:46:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:47:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:48:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:49:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:63:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:64:			IEffect effect = Effects[i];
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:65:			if (effect is SimpleEffect)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:66:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:67:				SimpleEffect simpleEffect = effect as 
+SimpleEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:68:				if (simpleEffect.parameter != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:69:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:70:					Variable parameter = simpleEffect.parameter;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:71:					parameter.OnChange = 
+(Action)Delegate.Remove(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:72:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:73:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:74:			effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:75:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:77:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+
+
+
+
+----- PATTERN: SetEfficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:84:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:85:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:86:	public void SetEfficiency(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:87:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:88:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:89:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:90:			effect.SetEfficiency(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:91:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:92:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:93:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:94:	public virtual int GetReqs(Attributes key)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:95:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:96:		string attr = key.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:97:		return Reqs.Find((ItemReqs x) => x.Name == 
+attr)?.Value ?? 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:98:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:99:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:100:	public bool CheckReqs()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:101:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:102:		if (Reqs == null)
+
+
+
+
+----- PATTERN: SetGilding -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:70:					Variable parameter = simpleEffect.parameter;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:71:					parameter.OnChange = 
+(Action)Delegate.Remove(parameter.OnChange, new Action(simpleEffect.Update));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:72:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:73:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:74:			effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:75:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:77:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:78:	public void SetGilding(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:80:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:81:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:82:			effect.SetGilding(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:83:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:84:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:85:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:86:	public void SetEfficiency(Variable variable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:87:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:88:		foreach (IEffect effect in Effects)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:89:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:90:			effect.SetEfficiency(variable);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:91:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:92:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:93:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemTier.cs:94:	public virtual int GetReqs(Attributes key)
+
+
+
+
+----- PATTERN: addendum -----
+
+
+----- PATTERN: multiplier -----
+
+
+----- PATTERN: Addendum -----
+
+
+----- PATTERN: Multiplier -----
+

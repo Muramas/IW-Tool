@@ -1,0 +1,126 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+
+----- PATTERN: Efficiency -----
+
+
+----- PATTERN: gild -----
+
+
+----- PATTERN: Gild -----
+
+
+----- PATTERN: Apply -----
+
+
+----- PATTERN: Delete -----
+
+
+----- PATTERN: Update -----
+
+
+----- PATTERN: Change -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:1:using System;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:2:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:3:public abstract class Variable
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:4:{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:5:	public Action OnChange;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:6:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:7:	public Action<BigNumber> OnChangeAdd;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:9:	public abstract BigNumber Value { get; }
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:11:	public virtual void SetValue(BigNumber value)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:12:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:13:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:14:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:15:	public abstract void Change(BigNumber addendum, 
+BigNumber multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:16:}
+
+
+
+
+----- PATTERN: SetEfficiency -----
+
+
+----- PATTERN: SetGilding -----
+
+
+----- PATTERN: addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:7:	public Action<BigNumber> OnChangeAdd;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:9:	public abstract BigNumber Value { get; }
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:11:	public virtual void SetValue(BigNumber value)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:12:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:13:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:14:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:15:	public abstract void Change(BigNumber addendum, 
+BigNumber multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:16:}
+
+
+
+
+----- PATTERN: multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:7:	public Action<BigNumber> OnChangeAdd;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:9:	public abstract BigNumber Value { get; }
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:11:	public virtual void SetValue(BigNumber value)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:12:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:13:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:14:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:15:	public abstract void Change(BigNumber addendum, 
+BigNumber multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:16:}
+
+
+
+
+----- PATTERN: Addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:7:	public Action<BigNumber> OnChangeAdd;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:9:	public abstract BigNumber Value { get; }
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:11:	public virtual void SetValue(BigNumber value)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:12:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:13:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:14:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:15:	public abstract void Change(BigNumber addendum, 
+BigNumber multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:16:}
+
+
+
+
+----- PATTERN: Multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:7:	public Action<BigNumber> OnChangeAdd;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:9:	public abstract BigNumber Value { get; }
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:11:	public virtual void SetValue(BigNumber value)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:12:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:13:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:14:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:15:	public abstract void Change(BigNumber addendum, 
+BigNumber multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Variable.cs:16:}
+
+
+

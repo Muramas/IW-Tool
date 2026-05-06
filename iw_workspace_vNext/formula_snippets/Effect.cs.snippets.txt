@@ -1,0 +1,72 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+
+----- PATTERN: Efficiency -----
+
+
+----- PATTERN: gild -----
+
+
+----- PATTERN: Gild -----
+
+
+----- PATTERN: Apply -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:1:public class Effect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:3:	public EffectFactory.effect_preview preview;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:4:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:5:	public EffectFactory.effect_action apply;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:7:	public EffectFactory.effect_action delete;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:8:}
+
+
+
+
+----- PATTERN: Delete -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:1:public class Effect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:3:	public EffectFactory.effect_preview preview;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:4:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:5:	public EffectFactory.effect_action apply;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:6:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:7:	public EffectFactory.effect_action delete;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Effect.cs:8:}
+
+
+
+
+----- PATTERN: Update -----
+
+
+----- PATTERN: Change -----
+
+
+----- PATTERN: SetEfficiency -----
+
+
+----- PATTERN: SetGilding -----
+
+
+----- PATTERN: addendum -----
+
+
+----- PATTERN: multiplier -----
+
+
+----- PATTERN: Addendum -----
+
+
+----- PATTERN: Multiplier -----
+

@@ -1,0 +1,1 @@
+dotnet run --project .\src\IdleWizard.BuildTool.Wpf\IdleWizard.BuildTool.Wpf.csproj

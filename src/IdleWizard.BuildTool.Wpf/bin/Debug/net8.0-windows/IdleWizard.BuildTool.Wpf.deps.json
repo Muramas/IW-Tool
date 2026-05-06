@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "IdleWizard.BuildTool.Wpf/1.0.0": {
+        "runtime": {
+          "IdleWizard.BuildTool.Wpf.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IdleWizard.BuildTool.Wpf/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

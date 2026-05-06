@@ -1,0 +1,572 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs =====
+
+----- PATTERN: Requirements -----
+
+
+----- PATTERN: Requirement -----
+
+
+----- PATTERN: SpellBook -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:39:	public Reborn Reborn;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:40:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:41:	public VoidMana 
+VoidManaManager;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:42:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:43:	public UpgradeManager 
+UpgradeManager;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:44:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:45:	public BonusSpawner 
+BonusSpawner;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:46:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:47:	public SpellBook SpellBook;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:48:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:49:	public GoodsManager Shop;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:50:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:51:	public AchievementManager 
+AchievManager;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:52:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:53:	public BuildingLeveling[] 
+BuildingLeveling;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:54:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:55:	public SaveData SaveData;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:56:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:57:	public VariableComplex 
+OfflineProduction;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:58:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:59:	public VariableInt 
+LevelReduction;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:60:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:61:	public AnimatedText 
+AnimatedText;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:367:		Gallery.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:368:		PetGallery.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:369:		Interior = new 
+InteriorManager();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:370:		Interior.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:371:		CurrentHero.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:372:		AchievManager.PreInit();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:373:		AttributeManager.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:374:		CurrentPet.PanelInit();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:375:		SpellBook.Init();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:376:		
+SpellBook.ChangeSpellSet();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:377:		Pantheon.PreInit();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:378:		
+ExpeditionManager.Instance.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:379:		MBSpawner.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:380:		Craft.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:381:		AchievManager.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:382:		Trials.InitContext();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:383:		UpgradeManager.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:384:		BuffManager.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:385:		Resources.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:386:		Pantheon.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:387:		Ascension.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:388:		Gilding.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:389:		Craft.InitItems();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:390:		ChallengeManager.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:475:		Resources.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:476:		
+AttributeManager.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:477:		Trials.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:478:		
+ExpeditionManager.Instance.RealmChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:479:		
+CurrentHero.Hero.UpdateExp();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:480:		UpgradeManager.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:481:		CurrentPet.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:482:		CurrentHero.Restart();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:483:		
+SpellBook.ResetAll(resetAll: true);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:484:		
+OfflineProduction.SetValue(1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:485:		AddProfit(0f);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:486:		Orb.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:487:		Idle.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:488:		
+VoidManaManager.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:489:		BonusSpawner.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:490:		PPS.Reset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:491:		
+BuildingManager.ResetBuildings();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:492:		Scrolls.SpellsReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:493:		Scrolls.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:494:		
+Reborn.RestartSoulPower();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:495:		
+CurrentHero.Hero.UpdateExp();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:496:		Trials.PostRealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:497:		Shop.Activate();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:529:		
+ChallengeManager.RemoveRewards();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:530:		
+Scrolls.SpellsReset(isLoading);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:531:		PPSFromBuildings.Reset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:532:		Statistic.ExileReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:533:		
+BuildingManager.ResetBuildings();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:534:		
+UpgradeManager.Restart(isLoading);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:535:		CurrentPet.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:536:		CurrentHero.Restart();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:537:		SpellBook.ResetAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:538:		
+OfflineProduction.SetValue(1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:539:		AddProfit(0f);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:540:		Orb.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:541:		Idle.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:542:		BonusSpawner.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:543:		PPS.Reset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:544:		
+BuildingManager.ResetBuildings();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:545:		
+VoidManaManager.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:546:		Scrolls.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:547:		
+Reborn.RestartSoulPower();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:548:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:549:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:550:	public void PreLoad()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:551:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:569:		Trials.PreLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:570:		Pantheon.PreLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:571:		Realm.RemoveAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:572:		Realmcraft.PreLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:573:		Ascension.Deactivate();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:574:		Gilding.PreLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:575:		Event.PreLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:576:		Familiars.PreLoad();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:577:		
+SpellBook.Enhancements.ResetAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:578:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:579:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:580:	public void PostLoad()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:581:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:582:		Time.timeScale = 1f;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:583:		
+ChallengeManager.RemoveRewards();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:584:		
+SettingMenu.LoadSettings();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:585:		foreach (Scroll scroll 
+in Scrolls.Scrolls)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:586:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:587:			scroll.UpdateVisual();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:588:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:589:		Paragon.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:590:		
+VoidManaManager.ResetValue();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:591:		
+BonusSpawner.DisableAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:593:		BuffManager.OnBuffs();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:594:		
+CurrentHero.Hero.UpdateExp();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:595:		SettingMenu.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:596:		AchievManager.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:597:		Trials.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:598:		Reborn.ApplySouls();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:599:		Craft.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:600:		
+UpgradeManager.PostLoad();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:601:		SpellBook.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:602:		
+BuyPackPanel.SetState(BuyPack);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:603:		
+AttributeManager.PostReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:604:		Calendar.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:605:		Event.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:606:		
+ServerRewards.ApplyBuffs();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:607:		auto_enable = true;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:608:		MBSpawner.bonus.Off();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:609:		Pantheon.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:610:		Realm.ApplyAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:611:		Realmcraft.PostLoad();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:612:		
+SpellBook.ChangeSpellSet();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:613:		Gilding.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:614:		CurrentHero.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:615:		CurrentPet.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:616:		Ascension.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:617:		
+ChallengeManager.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:618:		Familiars.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:619:		Shop.special.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:620:		AddProfit(0f);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:621:		IsLoaded = true;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:622:		if (OnPostLoad != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:623:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:624:			OnPostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:625:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:626:		Tutorial.ShowOnLoad();
+
+
+
+
+----- PATTERN: SpellType -----
+
+
+----- PATTERN: TypeBehavior -----
+
+
+----- PATTERN: Class -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:1:using System;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:2:using System.Collections;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:3:using 
+System.Collections.Generic;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:4:using Steamworks;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:5:using UnityEngine;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:6:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:7:public class GameManager : 
+MonoBehaviour
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:8:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:9:	public static GameManager 
+Instance;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:11:	public int BuyPack = 1;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:13:	public VariableComplex 
+Profit;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:14:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:15:	public VariableComplex PPS;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:16:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:17:	public Relics Relics;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:18:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:19:	public VariableInt 
+AlterationSand;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:20:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:21:	public VariableFloat 
+AlterationSandIncome;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:464:		Gilding.RealmChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:465:		
+Craft.Proficiency.ResetFull();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:466:		
+BuildingManager.ResetBuildingsRealm();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:467:		Scrolls.ChangeRealm();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:468:		Craft.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:469:		Familiars.PreLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:470:		Realm.RemoveAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:471:		PPSFromBuildings.Reset();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:472:		
+Instance.CurrentHero.ClassBonusStacks.SetValue(0.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:473:		Statistic.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:474:		Paragon.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:475:		Resources.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:476:		
+AttributeManager.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:477:		Trials.RealmReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:478:		
+ExpeditionManager.Instance.RealmChange();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:479:		
+CurrentHero.Hero.UpdateExp();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:480:		UpgradeManager.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:481:		CurrentPet.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:482:		CurrentHero.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:483:		
+SpellBook.ResetAll(resetAll: true);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:484:		
+OfflineProduction.SetValue(1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:485:		AddProfit(0f);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:486:		Orb.Restart();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:639:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:640:		if (time_played >= 1f)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:641:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:642:			int num = 
+Mathf.FloorToInt(time_played);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:643:			
+Statistic.TimeTotal.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:644:			
+Statistic.TimeRealm.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:645:			
+Statistic.TimeSession.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:646:			
+CurrentHero.PlayedTime.Change(num);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:647:			
+Statistic.ChangeClassTime(CurrentHero.Hero.NameKey, num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:648:			if 
+(Instance.Ascension.IsActive)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:649:			{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:650:				
+Statistic.ChangeClassTime(Instance.Ascension.Choosen, num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:651:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:652:			if (CurrentPet.Pet != 
+null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:653:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:654:				
+CurrentPet.PlayedTime.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:655:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:656:			if 
+(CurrentPet.SecondPetIsAcitve())
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:657:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:658:				
+CurrentPet.PetPanel.secondSlot.PlayedTime.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:659:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:660:			if (Idle.IdleIsActive)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:661:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:662:				
+Statistic.TimeIdleSession.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:663:				
+Statistic.TimeIdleRealm.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:664:				
+Statistic.TimeIdleTotal.Change(num);
+
+
+
+
+----- PATTERN: HeroClass -----
+
+
+----- PATTERN: CurrentClass -----
+
+
+----- PATTERN: Temporalist -----
+
+
+----- PATTERN: Chronomancer -----
+
+
+----- PATTERN: Voidmancer -----
+
+
+----- PATTERN: Unlock -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:345:		
+Statistic.TimeSession.OnChange = null;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:346:		for (int i = 0; i < 5; 
+i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:347:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:348:			
+Statistic.ResourcesRealm.Add(new VariableBignumber(0.0));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:349:			
+Statistic.ResourcesTotal.Add(new VariableBignumber(0.0));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:350:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:351:		for (int j = 0; j < 7; 
+j++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:352:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:353:			
+Statistic.UnlockedByTiers.Add(new VariableInt(0));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:354:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:355:		Statistic.ExileReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:356:		Idle.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:357:		Orb.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:358:		VoidManaManager.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:359:		
+BonusSpawner.Init(VoidManaManager.VoidCore);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:360:		
+GameContext.GenerateContext();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:361:		Reborn.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:362:		Idle.PostInit();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:363:		Scrolls.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:364:		CurrentPet.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:365:		
+CurrentHero.HeroPanel.InitMap();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:366:		
+CurrentHero.HeroPanel.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:367:		Gallery.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:435:		Event.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:436:		
+ServerRewards.ApplyBuffs();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:437:		Craft.ApplyEffects();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:438:		Craft.ApplyEnchBonus();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:439:		Familiars.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:440:		
+UpgradeManager.CloseActivatedUpgrades();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:441:		
+CurrentHero.Hero.UpdateExp();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:442:		
+Gilding.CheckAvailable(reset: true);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:443:		
+Gallery.Unlocked.OnChange?.Invoke();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:444:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:445:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:446:	public void 
+RealmChange(Action onReset = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:447:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:448:		
+Reborn.BeginBlockUpdate();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:449:		Realmcraft.SaveHistory();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:450:		Realm.PreReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:451:		Ascension.ResetAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:452:		Calendar.Remove();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:453:		Event.Remove();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:454:		
+ServerRewards.RemoveBuffs();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:455:		
+Craft.weapons.RemoveEffect();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:456:		Craft.RemoveEffects();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:457:		Shop.OffVip();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:626:		Tutorial.ShowOnLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:627:		ServerRewards.Get();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:628:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:629:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:630:	public void PostOffline()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:631:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:632:		Realmcraft.PostOffline();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:633:		Tasks.PostLoad();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:634:		
+Interior.Backs.Unlocked.OnChange?.Invoke();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:635:		OnPostOffline?.Invoke();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:636:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:637:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:638:	private void 
+update_time_played()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:639:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:640:		if (time_played >= 1f)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:641:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:642:			int num = 
+Mathf.FloorToInt(time_played);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:643:			
+Statistic.TimeTotal.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:644:			
+Statistic.TimeRealm.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:645:			
+Statistic.TimeSession.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:646:			
+CurrentHero.PlayedTime.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:647:			
+Statistic.ChangeClassTime(CurrentHero.Hero.NameKey, num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:648:			if 
+(Instance.Ascension.IsActive)
+
+
+
+
+----- PATTERN: Available -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:434:		Calendar.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:435:		Event.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:436:		
+ServerRewards.ApplyBuffs();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:437:		Craft.ApplyEffects();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:438:		Craft.ApplyEnchBonus();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:439:		Familiars.PostLoad();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:440:		
+UpgradeManager.CloseActivatedUpgrades();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:441:		
+CurrentHero.Hero.UpdateExp();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:442:		
+Gilding.CheckAvailable(reset: true);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:443:		
+Gallery.Unlocked.OnChange?.Invoke();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:444:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:445:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:446:	public void 
+RealmChange(Action onReset = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:447:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:448:		
+Reborn.BeginBlockUpdate();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:449:		Realmcraft.SaveHistory();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:450:		Realm.PreReset();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:451:		Ascension.ResetAll();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:452:		Calendar.Remove();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:453:		Event.Remove();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:454:		
+ServerRewards.RemoveBuffs();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:455:		
+Craft.weapons.RemoveEffect();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:456:		Craft.RemoveEffects();
+
+
+
+
+----- PATTERN: CanCast -----
+
+
+----- PATTERN: CanUse -----
+
+
+----- PATTERN: SpellSlot -----
+
+
+----- PATTERN: Spellbar -----
+
+
+----- PATTERN: GetSpell -----
+
+
+----- PATTERN: AddSpell -----
+
+
+----- PATTERN: RemoveSpell -----
+
+
+----- PATTERN: Key -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:282:	public void 
+AddOfflineMana(TimeSpan span)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:283:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:284:		long sec = 
+(long)span.TotalSeconds;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:285:		
+SaveData.OfflineImediatly(sec);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:286:		IEnumerator routine = 
+wait_1_frame(delegate
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:287:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:288:			AddProfit(0f);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:289:			BigNumber bigNumber = 
+Idle.GetIdleBonus() * PPSFromBuildings.ApplyModOnVar(PPS.Value) * sec;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:290:			if 
+(Instance.CurrentHero.Hero.NameKey != HeroesNames.Umbramancer && Instance.CurrentHero.Hero.NameKey 
+!= HeroesNames.Desolator)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:291:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:292:				bigNumber *= 
+OfflineProduction.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:293:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:294:			OfflineProductionData 
+offlineProductionData = new OfflineProductionData
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:295:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:296:				time = (int)((sec > 
+int.MaxValue) ? int.MaxValue : sec),
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:297:				mana = bigNumber
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:298:			};
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:299:			ManaChange(bigNumber);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:300:			SaveData.SkipTimeData 
+data = SaveData.SkipTime(sec);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:301:			
+offlineProductionData.LoadSkipTime(data);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:302:			
+Instance.Resources.gatherer.Offline(sec);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:303:			
+UpgradeManager.CloseActivatedUpgrades();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:304:			
+Offline.Open(offlineProductionData);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:639:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:640:		if (time_played >= 1f)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:641:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:642:			int num = 
+Mathf.FloorToInt(time_played);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:643:			
+Statistic.TimeTotal.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:644:			
+Statistic.TimeRealm.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:645:			
+Statistic.TimeSession.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:646:			
+CurrentHero.PlayedTime.Change(num);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:647:			
+Statistic.ChangeClassTime(CurrentHero.Hero.NameKey, num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:648:			if 
+(Instance.Ascension.IsActive)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:649:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:650:				
+Statistic.ChangeClassTime(Instance.Ascension.Choosen, num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:651:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:652:			if (CurrentPet.Pet != 
+null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:653:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:654:				
+CurrentPet.PlayedTime.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:655:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:656:			if 
+(CurrentPet.SecondPetIsAcitve())
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:657:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:658:				
+CurrentPet.PetPanel.secondSlot.PlayedTime.Change(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:659:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:660:			if (Idle.IdleIsActive)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\GameManager.cs:661:			{
+
+
+

@@ -1,0 +1,14 @@
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\bin\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.exe
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\bin\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.deps.json
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\bin\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.runtimeconfig.json
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\bin\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.dll
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\bin\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.pdb
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.GeneratedMSBuildEditorConfig.editorconfig
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.AssemblyInfoInputs.cache
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.AssemblyInfo.cs
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.csproj.CoreCompileInputs.cache
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.dll
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\refint\IdleWizard.BuildTool.Gui.dll
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.pdb
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\IdleWizard.BuildTool.Gui.genruntimeconfig.cache
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Gui\obj\Debug\net8.0-windows\ref\IdleWizard.BuildTool.Gui.dll

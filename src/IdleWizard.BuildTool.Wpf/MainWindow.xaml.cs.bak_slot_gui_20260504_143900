@@ -1,0 +1,1092 @@
+﻿using Microsoft.Win32;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
+using System.Text;
+using System.Text.Json;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace IdleWizard.BuildTool.Wpf;
+
+public partial class MainWindow : Window
+{
+    public ObservableCollection<SheetRow> GlobalRows { get; } = new();
+    public ObservableCollection<SpellChip> BurstSpells { get; } = new();
+    public ObservableCollection<SpellChip> VoidSpells { get; } = new();
+    public ObservableCollection<EquipmentCard> BurstEquipmentCards { get; } = new();
+    public ObservableCollection<EquipmentCard> VoidEquipmentCards { get; } = new();
+    public ObservableCollection<ResultRow> ResultRows { get; } = new();
+
+    public string BurstPetDisplay { get; set; } = "Pet: not set";
+    public string VoidPetDisplay { get; set; } = "Pet: not set";
+    public string BurstPhaseWeightDisplay { get; set; } = "Phase weight: not set";
+    public string VoidPhaseWeightDisplay { get; set; } = "Phase weight: not set";
+
+    private readonly Dictionary<string, string> _itemNames = new(StringComparer.OrdinalIgnoreCase);
+
+    private string? _lastScoredSlot;
+    private string? _bestItemId;
+    private string? _bestTier;
+    private string? _bestName;
+    private string? _bestScoreDelta;
+
+    private string? _lastResultPath;
+
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        DataContext = this;
+
+        LoadScenarioIntoSheets();
+    }
+
+    private void BrowseScenario_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFileDialog
+        {
+            Title = "Select scenario JSON",
+            Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+            FileName = Path.GetFileName(ScenarioPathTextBox.Text)
+        };
+
+        if (dialog.ShowDialog(this) == true)
+        {
+            ScenarioPathTextBox.Text = dialog.FileName;
+            LoadScenarioIntoSheets();
+        }
+    }
+
+    private void LoadScenario_Click(object sender, RoutedEventArgs e)
+    {
+        LoadScenarioIntoSheets();
+    }
+
+    private async void Analyze_Click(object sender, RoutedEventArgs e)
+    {
+        await RunAnalysisAsync();
+    }
+
+    private void OpenJson_Click(object sender, RoutedEventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(_lastResultPath) || !File.Exists(_lastResultPath))
+        {
+            MessageBox.Show(this, "No result JSON has been generated yet.", "No result");
+            return;
+        }
+
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = _lastResultPath,
+            UseShellExecute = true
+        });
+    }
+
+    private void LoadScenarioIntoSheets()
+    {
+        GlobalRows.Clear();
+        BurstSpells.Clear();
+        BurstEquipmentCards.Clear();
+        VoidSpells.Clear();
+        VoidEquipmentCards.Clear();
+
+        var scenarioPath = ResolvePath(ScenarioPathTextBox.Text);
+
+        if (!File.Exists(scenarioPath))
+        {
+            FillFallbackLayout();
+            return;
+        }
+
+        try
+        {
+            using var doc = JsonDocument.Parse(File.ReadAllText(scenarioPath));
+            var root = doc.RootElement;
+
+            LoadItemNames(root, scenarioPath);
+
+            FillGlobalRows(root);
+            FillPhaseRows(root);
+            LoadSpellValidationIfExists(scenarioPath);
+            LoadPetValidationIfExists(scenarioPath);
+            LoadSaveImportSummaryIfExists(scenarioPath);
+            LoadPetValidationIfExists(scenarioPath);
+            LoadSaveImportSummaryIfExists(scenarioPath);
+            DataContext = null;
+            DataContext = this;
+        }
+        catch (Exception ex)
+        {
+            AppendLog(ex.ToString());
+            FillFallbackLayout();
+        }
+    }
+
+    private void FillFallbackLayout()
+    {
+        AddSection(GlobalRows, "General");
+        AddRow(GlobalRows, "Class", "");
+        AddRow(GlobalRows, "Ascension", "");
+        AddRow(GlobalRows, "Production Source", "");
+        AddRow(GlobalRows, "Character Level", "");
+        AddRow(GlobalRows, "Enchanting Dust", "");
+        AddRow(GlobalRows, "Max Enchantment", "");
+
+        // Burst phase fallback
+        BurstPetDisplay = "Pet: not set";
+        BurstSpells.Add(SpellChip.Placeholder("Spell not set"));
+        BurstEquipmentCards.Add(new EquipmentCard { Slot = "Head", ItemDisplay = "No item selected", TierDisplay = "Tier -", EnchantDisplay = "Enchant -", Verdict = "Unset", VerdictBrush = "#CCCCCC", Notes = "" });
+
+        // Void phase fallback
+        VoidPetDisplay = "Pet: not set";
+        VoidSpells.Add(SpellChip.Placeholder("Spell not set"));
+        VoidEquipmentCards.Add(new EquipmentCard { Slot = "Head", ItemDisplay = "No item selected", TierDisplay = "Tier -", EnchantDisplay = "Enchant -", Verdict = "Unset", VerdictBrush = "#CCCCCC", Notes = "" });
+    }
+
+    private void FillGlobalRows(JsonElement root)
+    {
+        AddSection(GlobalRows, "General");
+
+        if (root.TryGetProperty("globalContext", out var global)
+            && global.ValueKind == JsonValueKind.Object)
+        {
+            AddKnownGlobal(global, "class", "Class");
+            AddKnownGlobal(global, "ascension", "Ascension");
+            AddKnownGlobal(global, "productionSource", "Production Source");
+            AddKnownGlobal(global, "characterLevel", "Character Level");
+            AddKnownGlobal(global, "maxPetLevel", "Maximum Pet Level");
+            AddKnownGlobal(global, "legacy", "Legacy");
+            AddKnownGlobal(global, "totalManaLog", "Total Mana log");
+            AddKnownGlobal(global, "enchantingDust", "Enchanting Dust");
+            AddKnownGlobal(global, "maxEnchantment", "Max Enchantment");
+            AddKnownGlobal(global, "challengeEnchantBonusLevels", "Challenge Enchant Bonus");
+        }
+        else
+        {
+            AddRow(GlobalRows, "Class", "");
+            AddRow(GlobalRows, "Ascension", "");
+            AddRow(GlobalRows, "Production Source", "");
+            AddRow(GlobalRows, "Character Level", "");
+            AddRow(GlobalRows, "Enchanting Dust", "");
+            AddRow(GlobalRows, "Max Enchantment", "");
+        }
+
+        AddSection(GlobalRows, "Objectives");
+
+        if (root.TryGetProperty("objectives", out var objectives)
+            && objectives.ValueKind == JsonValueKind.Object)
+        {
+            foreach (var objective in objectives.EnumerateObject())
+            {
+                AddRow(GlobalRows, objective.Name, GetJsonScalarAsString(objective.Value), "weight");
+            }
+        }
+
+        AddSection(GlobalRows, "Current Values");
+
+        if (root.TryGetProperty("currentValues", out var currentValues)
+            && currentValues.ValueKind == JsonValueKind.Object)
+        {
+            foreach (var value in currentValues.EnumerateObject())
+            {
+                AddRow(GlobalRows, value.Name, GetJsonScalarAsString(value.Value));
+            }
+        }
+    }
+
+    private void AddKnownGlobal(JsonElement global, string jsonName, string label)
+    {
+        if (global.TryGetProperty(jsonName, out var value))
+        {
+            AddRow(GlobalRows, label, GetJsonScalarAsString(value));
+        }
+        else
+        {
+            AddRow(GlobalRows, label, "");
+        }
+    }
+
+    private void FillPhaseRows(JsonElement root)
+    {
+        if (!root.TryGetProperty("phases", out var phases)
+            || phases.ValueKind != JsonValueKind.Array)
+        {
+            // Burst phase fallback
+            BurstPetDisplay = "Pet: not set";
+            BurstSpells.Add(SpellChip.Placeholder("Spell not set"));
+            BurstEquipmentCards.Add(new EquipmentCard { Slot = "Head", ItemDisplay = "No item selected", TierDisplay = "Tier -", EnchantDisplay = "Enchant -", Verdict = "Unset", VerdictBrush = "#CCCCCC", Notes = "" });
+
+            // Void phase fallback
+            VoidPetDisplay = "Pet: not set";
+            VoidSpells.Add(SpellChip.Placeholder("Spell not set"));
+            VoidEquipmentCards.Add(new EquipmentCard { Slot = "Head", ItemDisplay = "No item selected", TierDisplay = "Tier -", EnchantDisplay = "Enchant -", Verdict = "Unset", VerdictBrush = "#CCCCCC", Notes = "" });
+            return;
+        }
+
+        var list = phases.EnumerateArray().ToList();
+
+        var burst = list.FirstOrDefault(p =>
+            GetString(p, "name").Contains("Burst", StringComparison.OrdinalIgnoreCase));
+
+        var vm = list.FirstOrDefault(p =>
+            GetString(p, "name").Contains("Void", StringComparison.OrdinalIgnoreCase)
+            || GetString(p, "name").Contains("VM", StringComparison.OrdinalIgnoreCase));
+
+        FillPhase(BurstSpells, BurstEquipmentCards, true, burst, "Burst Phase");
+        FillPhase(VoidSpells, VoidEquipmentCards, false, vm, "Void Mana Phase");
+    }
+
+    private void FillPhase(
+        ObservableCollection<SpellChip> spellsRows,
+        ObservableCollection<EquipmentCard> equipmentCards,
+        bool isBurst,
+        JsonElement phase,
+        string fallback)
+    {
+        var name = phase.ValueKind == JsonValueKind.Object
+            ? GetString(phase, "name")
+            : fallback;
+
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            name = fallback;
+        }
+
+        if (phase.ValueKind != JsonValueKind.Object)
+        {
+            if (isBurst)
+            {
+                BurstPetDisplay = "Pet: not set";
+                BurstPhaseWeightDisplay = "Phase weight: not set";
+            }
+            else
+            {
+                VoidPetDisplay = "Pet: not set";
+                VoidPhaseWeightDisplay = "Phase weight: not set";
+            }
+
+            spellsRows.Add(SpellChip.Placeholder("Spell not set"));
+            equipmentCards.Add(new EquipmentCard
+            {
+                Slot = "Head",
+                ItemDisplay = "No item selected",
+                TierDisplay = "Tier -",
+                EnchantDisplay = "Enchant -",
+                Verdict = "Unset",
+                VerdictBrush = "#CCCCCC",
+                Notes = ""
+            });
+
+            return;
+        }
+
+        var pet = GetString(phase, "pet");
+        var petLevel = GetString(phase, "petLevel");
+        var phaseWeight = GetString(phase, "phaseWeight");
+
+        if (isBurst)
+        {
+            BurstPetDisplay = string.IsNullOrWhiteSpace(pet)
+                ? "Pet: not set"
+                : $"Pet: {pet}  Lv {petLevel}";
+
+            BurstPhaseWeightDisplay = $"Phase weight: {phaseWeight}";
+        }
+        else
+        {
+            VoidPetDisplay = string.IsNullOrWhiteSpace(pet)
+                ? "Pet: not set"
+                : $"Pet: {pet}  Lv {petLevel}";
+
+            VoidPhaseWeightDisplay = $"Phase weight: {phaseWeight}";
+        }
+
+        if (phase.TryGetProperty("spells", out var spells)
+            && spells.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var spell in spells.EnumerateArray())
+            {
+                spellsRows.Add(new SpellChip { Name = GetJsonScalarAsString(spell), Badge = "?", BadgeBrush = "#CCCCCC" });
+            }
+        }
+
+        if (spellsRows.Count == 0)
+        {
+            spellsRows.Add(SpellChip.Placeholder("No spells configured"));
+        }
+
+        if (phase.TryGetProperty("equipment", out var equipment)
+            && equipment.ValueKind == JsonValueKind.Object)
+        {
+            foreach (var slot in equipment.EnumerateObject())
+            {
+                var item = slot.Value;
+
+                var itemId = GetString(item, "itemId");
+                var itemName = GetString(item, "itemName");
+                var tier = GetString(item, "tier");
+                var enchant = GetString(item, "enchantLevel");
+                var bonus = GetString(item, "bonusEnchantLevel");
+
+                var enchantDisplay = (!string.IsNullOrWhiteSpace(enchant) || !string.IsNullOrWhiteSpace(bonus))
+                    ? $"Enchant {enchant}+{bonus}".Trim('+')
+                    : "Enchant -";
+
+                equipmentCards.Add(new EquipmentCard
+                {
+                    Slot = slot.Name,
+                    ItemId = itemId,
+                    Tier = tier,
+                    ItemDisplay = string.IsNullOrWhiteSpace(itemId)
+                        ? "No item selected"
+                        : !string.IsNullOrWhiteSpace(itemName)
+                            ? $"{itemName} (Item {itemId})"
+                            : ResolveItemName(itemId),
+                    TierDisplay = string.IsNullOrWhiteSpace(tier)
+                        ? "Tier -"
+                        : $"Tier {tier}",
+                    EnchantDisplay = enchantDisplay,
+                    Verdict = "Current",
+                    VerdictBrush = "#FFE699",
+                    ScoreDisplay = "",
+                    Notes = "Current scenario equipment."
+                });
+            }
+        }
+
+        if (equipmentCards.Count == 0)
+        {
+            equipmentCards.Add(new EquipmentCard
+            {
+                Slot = "Head",
+                ItemDisplay = "No item selected",
+                TierDisplay = "Tier -",
+                EnchantDisplay = "Enchant -",
+                Verdict = "Unset",
+                VerdictBrush = "#CCCCCC",
+                Notes = ""
+            });
+        }
+    }
+    private async Task RunAnalysisAsync()
+    {
+        try
+        {
+            LogTextBox.Clear();
+            ResultRows.Clear();
+            DetailsTextBox.Clear();
+
+            var scenarioPath = ResolvePath(ScenarioPathTextBox.Text);
+
+            if (!File.Exists(scenarioPath))
+            {
+                MessageBox.Show(this, $"Scenario file not found:\n{scenarioPath}", "Missing scenario");
+                return;
+            }
+
+            var resultPath = GetOutputJsonPathFromScenario(scenarioPath);
+            _lastResultPath = resultPath;
+
+            AppendLog($"Scenario: {scenarioPath}");
+            AppendLog($"Expected result JSON: {resultPath}");
+            AppendLog("");
+
+            var repoRoot = FindRepoRoot();
+
+            var cliProject = Path.Combine(
+                repoRoot,
+                "src",
+                "IdleWizard.BuildTool.Cli",
+                "IdleWizard.BuildTool.Cli.csproj"
+            );
+
+            if (!File.Exists(cliProject))
+            {
+                MessageBox.Show(this, $"CLI project not found:\n{cliProject}", "Missing CLI project");
+                return;
+            }
+
+            var arguments =
+                $"run --project \"{cliProject}\" -- --score-slot-weighted-file \"{scenarioPath}\"";
+
+            AppendLog("Running:");
+            AppendLog("dotnet " + arguments);
+            AppendLog("");
+
+            var output = await RunProcessAsync(repoRoot, "dotnet", arguments);
+
+            AppendLog(output);
+
+            var validationArguments =
+                $"run --project \"{cliProject}\" -- --validate-phase-spells \"{scenarioPath}\"";
+
+            AppendLog("");
+            AppendLog("Running spell validation:");
+            AppendLog("dotnet " + validationArguments);
+            AppendLog("");
+
+            var validationOutput = await RunProcessAsync(repoRoot, "dotnet", validationArguments);
+            AppendLog(validationOutput);
+
+            LoadSpellValidationIfExists(scenarioPath);
+            var petValidationPath = GetPetValidationOutputPathFromScenario(scenarioPath);
+
+            var petValidationArguments =
+                "run --project \"" + cliProject + "\" -- --validate-phase-pets \"" + scenarioPath + "\" \"" + petValidationPath + "\"";
+
+            AppendLog("");
+            AppendLog("Running pet validation:");
+            AppendLog("dotnet " + petValidationArguments);
+            AppendLog("");
+
+            var petValidationOutput = await RunProcessAsync(repoRoot, "dotnet", petValidationArguments);
+            AppendLog(petValidationOutput);
+
+            LoadPetValidationIfExists(scenarioPath);
+            LoadSaveImportSummaryIfExists(scenarioPath);
+            LoadPetValidationIfExists(scenarioPath);
+            LoadSaveImportSummaryIfExists(scenarioPath);
+            LoadPetValidationIfExists(scenarioPath);
+            LoadSaveImportSummaryIfExists(scenarioPath);
+
+            if (!File.Exists(resultPath))
+            {
+                MessageBox.Show(this, $"Result JSON was not created:\n{resultPath}", "Missing result");
+                return;
+            }
+
+            LoadResultJson(resultPath);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(this, ex.ToString(), "Error");
+        }
+    }
+
+    private void LoadResultJson(string resultPath)
+    {
+        ResultRows.Clear();
+        DetailsTextBox.Clear();
+
+        using var doc = JsonDocument.Parse(File.ReadAllText(resultPath));
+        var root = doc.RootElement;
+
+        if (!root.TryGetProperty("results", out var results)
+            || results.ValueKind != JsonValueKind.Array)
+        {
+            MessageBox.Show(this, "Result JSON does not contain a results array.", "Invalid result");
+            return;
+        }
+
+        CaptureBestRecommendation(root, results);
+
+        foreach (var result in results.EnumerateArray())
+        {
+            ResultRows.Add(new ResultRow
+            {
+                Rank = GetString(result, "rank"),
+                ItemId = GetString(result, "itemId"),
+                Tier = GetString(result, "tier"),
+                Name = GetString(result, "name"),
+                WeightedScore = GetString(result, "weightedScore"),
+                VsEquipped = GetString(result, "vsEquippedScoreDelta"),
+                Verified = GetString(result, "fullyVerified"),
+                RawJson = result.GetRawText()
+            });
+        }
+
+        if (ResultRows.Count > 0)
+        {
+            ResultsGrid.SelectedIndex = 0;
+        }
+
+        ApplyRecommendationOverlay();
+
+        AppendLog("");
+        AppendLog($"Loaded result JSON: {resultPath}");
+        AppendLog($"Rows: {ResultRows.Count}");
+    }
+
+    private void ResultsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (ResultsGrid.SelectedItem is not ResultRow row)
+        {
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(row.RawJson))
+        {
+            return;
+        }
+
+        using var doc = JsonDocument.Parse(row.RawJson);
+        var element = doc.RootElement;
+
+        var builder = new StringBuilder();
+
+        builder.AppendLine($"{GetString(element, "name")} | Item {GetString(element, "itemId")} | Tier {GetString(element, "tier")}");
+        builder.AppendLine($"Weighted Score: {GetString(element, "weightedScore")}");
+        builder.AppendLine($"Vs Equipped:    {GetString(element, "vsEquippedScoreDelta")}");
+        builder.AppendLine($"Verified:       {GetString(element, "fullyVerified")}");
+        builder.AppendLine();
+
+        if (element.TryGetProperty("objectiveContributions", out var contributions)
+            && contributions.ValueKind == JsonValueKind.Object)
+        {
+            builder.AppendLine("Objective Contributions");
+            builder.AppendLine("-----------------------");
+
+            foreach (var objective in contributions.EnumerateObject())
+            {
+                var value = objective.Value;
+
+                builder.AppendLine(objective.Name);
+                builder.AppendLine($"  before:       {GetString(value, "before")}");
+                builder.AppendLine($"  after:        {GetString(value, "after")}");
+                builder.AppendLine($"  ratio:        {GetString(value, "ratio")}");
+                builder.AppendLine($"  log10 ratio:  {GetString(value, "log10Ratio")}");
+                builder.AppendLine($"  weight:       {GetString(value, "weight")}");
+                builder.AppendLine($"  contribution: {GetString(value, "contribution")}");
+                builder.AppendLine($"  direct:       {GetString(value, "directlyTouched")}");
+                builder.AppendLine();
+            }
+        }
+
+        if (element.TryGetProperty("changedResources", out var changedResources)
+            && changedResources.ValueKind == JsonValueKind.Object)
+        {
+            builder.AppendLine("Changed Resources");
+            builder.AppendLine("-----------------");
+
+            foreach (var resource in changedResources.EnumerateObject())
+            {
+                var value = resource.Value;
+                builder.AppendLine($"{resource.Name}: {GetString(value, "before")} -> {GetString(value, "after")}");
+            }
+        }
+
+        DetailsTextBox.Text = builder.ToString();
+    }
+
+    private static void AddSection(ObservableCollection<SheetRow> rows, string title)
+    {
+        rows.Add(new SheetRow
+        {
+            Field = title,
+            Value = "",
+            Extra = ""
+        });
+    }
+
+    private static void AddRow(ObservableCollection<SheetRow> rows, string field, string value, string extra = "")
+    {
+        rows.Add(new SheetRow
+        {
+            Field = field,
+            Value = value,
+            Extra = extra
+        });
+    }
+
+
+    private void LoadItemNames(JsonElement scenarioRoot, string scenarioPath)
+    {
+        _itemNames.Clear();
+
+        if (!scenarioRoot.TryGetProperty("workspace", out var workspaceElement))
+        {
+            return;
+        }
+
+        var workspaceRaw = GetJsonScalarAsString(workspaceElement);
+
+        if (string.IsNullOrWhiteSpace(workspaceRaw))
+        {
+            return;
+        }
+
+        var workspace = ResolvePathRelativeToFile(scenarioPath, workspaceRaw);
+        var rawRoot = Path.Combine(workspace, "raw_files");
+
+        if (!Directory.Exists(rawRoot))
+        {
+            return;
+        }
+
+        var itemsFile = Directory
+            .EnumerateFiles(rawRoot, "*", SearchOption.AllDirectories)
+            .Where(path =>
+                Path.GetFileName(path).Equals("Items.bytes", StringComparison.OrdinalIgnoreCase)
+                || Path.GetFileName(path).Equals("Items.bytes.txt", StringComparison.OrdinalIgnoreCase)
+                || Path.GetFileName(path).Equals("Items.json", StringComparison.OrdinalIgnoreCase)
+            )
+            .OrderBy(path => path)
+            .FirstOrDefault();
+
+        if (itemsFile is null)
+        {
+            return;
+        }
+
+        try
+        {
+            using var doc = JsonDocument.Parse(File.ReadAllText(itemsFile));
+
+            if (doc.RootElement.ValueKind != JsonValueKind.Array)
+            {
+                return;
+            }
+
+            foreach (var item in doc.RootElement.EnumerateArray())
+            {
+                var id = GetString(item, "ID");
+                var name = GetString(item, "Name");
+
+                if (!string.IsNullOrWhiteSpace(id)
+                    && !string.IsNullOrWhiteSpace(name))
+                {
+                    _itemNames[id] = name;
+                }
+            }
+        }
+        catch
+        {
+            // Non-fatal. UI can still show item IDs.
+        }
+    }
+
+    private string ResolveItemName(string itemId)
+    {
+        if (_itemNames.TryGetValue(itemId, out var name))
+        {
+            return $"{name} (Item {itemId})";
+        }
+
+        return $"Item {itemId}";
+    }
+
+    private void CaptureBestRecommendation(JsonElement resultRoot, JsonElement results)
+    {
+        _lastScoredSlot = null;
+        _bestItemId = null;
+        _bestTier = null;
+        _bestName = null;
+        _bestScoreDelta = null;
+
+        if (resultRoot.TryGetProperty("slot", out var slotElement))
+        {
+            _lastScoredSlot = GetJsonScalarAsString(slotElement);
+        }
+
+        if (results.ValueKind != JsonValueKind.Array)
+        {
+            return;
+        }
+
+        var first = results.EnumerateArray().FirstOrDefault();
+
+        if (first.ValueKind != JsonValueKind.Object)
+        {
+            return;
+        }
+
+        _bestItemId = GetString(first, "itemId");
+        _bestTier = GetString(first, "tier");
+        _bestName = GetString(first, "name");
+        _bestScoreDelta = GetString(first, "vsEquippedScoreDelta");
+    }
+
+    private void ApplyRecommendationOverlay()
+    {
+        if (string.IsNullOrWhiteSpace(_lastScoredSlot)
+            || string.IsNullOrWhiteSpace(_bestItemId))
+        {
+            MarkRecommendationsPending(BurstEquipmentCards);
+            MarkRecommendationsPending(VoidEquipmentCards);
+
+            DataContext = null;
+            DataContext = this;
+
+            return;
+        }
+
+        ApplyRecommendationOverlay(BurstEquipmentCards);
+        ApplyRecommendationOverlay(VoidEquipmentCards);
+
+        DataContext = null;
+        DataContext = this;
+    }
+
+    private static void MarkRecommendationsPending(ObservableCollection<EquipmentCard> cards)
+    {
+        foreach (var card in cards)
+        {
+            card.SuggestedStatus = "Pending";
+            card.SuggestedStatusBrush = "#CCCCCC";
+            card.SuggestedItemDisplay = "Run Analyze to get a suggestion.";
+            card.SuggestedRankDisplay = "";
+            card.SuggestedGainDisplay = "";
+            card.SuggestedReason = "No recommendation has been calculated for this slot yet.";
+
+            if (string.IsNullOrWhiteSpace(card.ScoreDisplay))
+            {
+                card.ScoreDisplay = "";
+            }
+
+            if (string.IsNullOrWhiteSpace(card.Notes))
+            {
+                card.Notes = card.SuggestedReason;
+            }
+        }
+    }
+
+    private void ApplyRecommendationOverlay(ObservableCollection<EquipmentCard> cards)
+    {
+        foreach (var card in cards)
+        {
+            if (!card.Slot.Equals(_lastScoredSlot, StringComparison.OrdinalIgnoreCase))
+            {
+                card.SuggestedStatus = "Not scored";
+                card.SuggestedStatusBrush = "#999999";
+                card.SuggestedItemDisplay = "No suggestion for this slot from the latest analysis.";
+                card.SuggestedRankDisplay = "";
+                card.SuggestedGainDisplay = "";
+                card.SuggestedReason = "The latest analysis targeted " + _lastScoredSlot + ", not " + card.SlotDisplay + ".";
+
+                // Preserve legacy display fields for old XAML/popup bindings.
+                if (string.IsNullOrWhiteSpace(card.ScoreDisplay))
+                {
+                    card.ScoreDisplay = "";
+                }
+
+                card.Notes = card.SuggestedReason;
+
+                continue;
+            }
+
+            var bestName = string.IsNullOrWhiteSpace(_bestName)
+                ? "Unknown suggested item"
+                : _bestName;
+
+            var bestItemDisplay =
+                bestName +
+                " (Item " + (_bestItemId ?? "?") +
+                ", Tier " + (_bestTier ?? "?") + ")";
+
+            var isCurrentBest =
+                card.ItemId.Equals(_bestItemId ?? "", StringComparison.OrdinalIgnoreCase)
+                && card.Tier.Equals(_bestTier ?? "", StringComparison.OrdinalIgnoreCase);
+
+            if (isCurrentBest)
+            {
+                card.Verdict = "Best";
+                card.VerdictBrush = "#C6EFCE";
+
+                card.SuggestedStatus = "Best";
+                card.SuggestedStatusBrush = "#C6EFCE";
+                card.SuggestedItemDisplay = card.ItemDisplay;
+                card.SuggestedRankDisplay = "Rank #1";
+                card.SuggestedGainDisplay = "Current item already matches the top recommendation.";
+                card.SuggestedReason =
+                    "This equipped item is already the best known recommendation for " +
+                    card.SlotDisplay +
+                    " under the current objective weights and enchant assumptions: " +
+                    card.CurrentEnchantContext +
+                    ".";
+
+                // Legacy fields.
+                card.ScoreDisplay = card.SuggestedGainDisplay;
+                card.Notes = card.SuggestedReason;
+            }
+            else
+            {
+                card.Verdict = "Review";
+                card.VerdictBrush = "#FFF2CC";
+
+                card.SuggestedStatus = "Review";
+                card.SuggestedStatusBrush = "#FFF2CC";
+                card.SuggestedItemDisplay = bestItemDisplay;
+                card.SuggestedRankDisplay = "Rank #1";
+                card.SuggestedGainDisplay = string.IsNullOrWhiteSpace(_bestScoreDelta)
+                    ? "Estimated score delta unavailable."
+                    : "Estimated score delta: " + _bestScoreDelta;
+
+                card.SuggestedReason =
+                    "Suggested for " + card.SlotDisplay + ": " + bestItemDisplay + "." + Environment.NewLine +
+                    "Compared against current item: " + card.ItemDisplay + "." + Environment.NewLine +
+                    "Current enchant context: " + card.CurrentEnchantContext + "." + Environment.NewLine +
+                    "This recommendation is based on the latest scored objective weights. " +
+                    "A different enchant setup may change the best item.";
+
+                // Legacy fields.
+                card.ScoreDisplay = card.SuggestedGainDisplay;
+                card.Notes = card.SuggestedReason;
+            }
+
+            // Keep old badge useful until XAML fully moves to the new Suggested* fields.
+            card.RecommendationBadge = card.SuggestedStatus;
+        }
+    }
+    private static async Task<string> RunProcessAsync(string workingDirectory, string fileName, string arguments)
+    {
+        var startInfo = new ProcessStartInfo
+        {
+            FileName = fileName,
+            Arguments = arguments,
+            WorkingDirectory = workingDirectory,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+
+        var process = new Process
+        {
+            StartInfo = startInfo
+        };
+
+        var output = new StringBuilder();
+
+        process.OutputDataReceived += (_, e) =>
+        {
+            if (e.Data is not null)
+            {
+                output.AppendLine(e.Data);
+            }
+        };
+
+        process.ErrorDataReceived += (_, e) =>
+        {
+            if (e.Data is not null)
+            {
+                output.AppendLine(e.Data);
+            }
+        };
+
+        process.Start();
+        process.BeginOutputReadLine();
+        process.BeginErrorReadLine();
+
+        await process.WaitForExitAsync();
+
+        output.AppendLine($"Process exit code: {process.ExitCode}");
+
+        return output.ToString();
+    }
+
+    private static string FindRepoRoot()
+    {
+        var current = AppContext.BaseDirectory;
+
+        while (!string.IsNullOrWhiteSpace(current))
+        {
+            var candidate = Path.Combine(
+                current,
+                "src",
+                "IdleWizard.BuildTool.Cli",
+                "IdleWizard.BuildTool.Cli.csproj"
+            );
+
+            if (File.Exists(candidate))
+            {
+                return current;
+            }
+
+            var parent = Directory.GetParent(current);
+
+            if (parent is null)
+            {
+                break;
+            }
+
+            current = parent.FullName;
+        }
+
+        var localCandidate = Path.Combine(
+            Environment.CurrentDirectory,
+            "src",
+            "IdleWizard.BuildTool.Cli",
+            "IdleWizard.BuildTool.Cli.csproj"
+        );
+
+        if (File.Exists(localCandidate))
+        {
+            return Environment.CurrentDirectory;
+        }
+
+        throw new DirectoryNotFoundException(
+            "Could not locate repository root containing src\\IdleWizard.BuildTool.Cli\\IdleWizard.BuildTool.Cli.csproj"
+        );
+    }
+
+    private static string GetOutputJsonPathFromScenario(string scenarioPath)
+    {
+        using var doc = JsonDocument.Parse(File.ReadAllText(scenarioPath));
+        var root = doc.RootElement;
+
+        if (root.TryGetProperty("outputJson", out var outputJson)
+            && outputJson.ValueKind == JsonValueKind.String)
+        {
+            var raw = outputJson.GetString();
+
+            if (!string.IsNullOrWhiteSpace(raw))
+            {
+                return ResolvePathRelativeToFile(scenarioPath, raw);
+            }
+        }
+
+        return Path.Combine(
+            Path.GetDirectoryName(scenarioPath) ?? Environment.CurrentDirectory,
+            "results.json"
+        );
+    }
+
+    private static string ResolvePath(string path)
+    {
+        if (Path.IsPathRooted(path))
+        {
+            return path;
+        }
+
+        return Path.GetFullPath(path);
+    }
+
+    private static string ResolvePathRelativeToFile(string baseFile, string path)
+    {
+        if (Path.IsPathRooted(path))
+        {
+            return path;
+        }
+
+        var directory = Path.GetDirectoryName(Path.GetFullPath(baseFile))
+            ?? Environment.CurrentDirectory;
+
+        return Path.GetFullPath(Path.Combine(directory, path));
+    }
+
+    private static string GetString(JsonElement element, string propertyName)
+    {
+        if (!element.TryGetProperty(propertyName, out var value))
+        {
+            return "";
+        }
+
+        return GetJsonScalarAsString(value);
+    }
+
+    private static string GetJsonScalarAsString(JsonElement element)
+    {
+        return element.ValueKind switch
+        {
+            JsonValueKind.String => element.GetString() ?? "",
+            JsonValueKind.Number => element.GetRawText(),
+            JsonValueKind.True => "true",
+            JsonValueKind.False => "false",
+            JsonValueKind.Null => "",
+            _ => element.GetRawText()
+        };
+    }
+
+    private void AppendLog(string text)
+    {
+        LogTextBox.AppendText(text + Environment.NewLine);
+    }
+}
+
+public sealed class SheetRow
+{
+    public string Field { get; set; } = "";
+    public string Value { get; set; } = "";
+    public string Extra { get; set; } = "";
+}
+
+public sealed class ResultRow
+{
+    public string Rank { get; set; } = "";
+    public string ItemId { get; set; } = "";
+    public string Tier { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string WeightedScore { get; set; } = "";
+    public string VsEquipped { get; set; } = "";
+    public string Verified { get; set; } = "";
+    public string RawJson { get; set; } = "";
+}
+
+public sealed class EquipmentCard
+{
+    public string Slot { get; set; } = "";
+    public string ItemId { get; set; } = "";
+    public string Tier { get; set; } = "";
+
+    public string ItemDisplay { get; set; } = "";
+    public string TierDisplay { get; set; } = "";
+    public string EnchantDisplay { get; set; } = "";
+
+    public string Verdict { get; set; } = "";
+    public string VerdictBrush { get; set; } = "#CCCCCC";
+
+    public string ScoreDisplay { get; set; } = "";
+    public string Notes { get; set; } = "";
+
+    public System.Windows.Visibility HasScoreVisibility =>
+        string.IsNullOrWhiteSpace(ScoreDisplay)
+            ? System.Windows.Visibility.Collapsed
+            : System.Windows.Visibility.Visible;
+
+    // Slot-centric recommendation fields.
+    // These make the UI display recommendations as first-class data instead of guessing from Notes/ScoreDisplay.
+    public string SuggestedItemDisplay { get; set; } = "Run Analyze to get a suggestion.";
+    public string SuggestedRankDisplay { get; set; } = "";
+    public string SuggestedGainDisplay { get; set; } = "";
+    public string SuggestedReason { get; set; } = "No recommendation has been calculated for this slot yet.";
+    public string SuggestedStatus { get; set; } = "Pending";
+    public string SuggestedStatusBrush { get; set; } = "#CCCCCC";
+
+    public string CurrentEnchantContext
+    {
+        get
+        {
+            var parts = new List<string>();
+
+            if (!string.IsNullOrWhiteSpace(TierDisplay))
+            {
+                parts.Add(TierDisplay);
+            }
+
+            if (!string.IsNullOrWhiteSpace(EnchantDisplay))
+            {
+                parts.Add(EnchantDisplay);
+            }
+
+            return parts.Count == 0
+                ? "No enchant context"
+                : string.Join("  |  ", parts);
+        }
+    }
+}
+public sealed class SpellChip
+{
+    public string Name { get; set; } = "";
+    public string Badge { get; set; } = "?";
+    public string BadgeBrush { get; set; } = "#CCCCCC";
+
+    public static SpellChip Placeholder(string name)
+    {
+        return new SpellChip
+        {
+            Name = name,
+            Badge = "?",
+            BadgeBrush = "#CCCCCC"
+        };
+    }
+}
+
+
+
+
+
+
+
+
+

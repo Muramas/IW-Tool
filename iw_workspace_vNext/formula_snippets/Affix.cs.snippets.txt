@@ -1,0 +1,476 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs =====
+
+----- PATTERN: diminish -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:31:		if (!string.IsNullOrEmpty(model.Int))
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:32:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:33:			num2 = Mathf.RoundToInt(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:34:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:35:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:36:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:37:			num3 = num;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:38:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:39:		effect = new 
+SimpleEffect(GameContext.GetResource(target), num2, num3, EffectNames.Linear, model.Diminish);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:40:		Description = model.Description;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:41:		modelId = model.Id;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:42:		isInt = model.IsInt();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:43:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:44:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:45:	public Affix(MythicData data)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:46:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:47:		target = data.ImplicitTarget;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:48:		BigNumber a = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:49:		BigNumber m = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:50:		if (!data.IsAdditive())
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:51:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:52:			m = data.ImplicitValue;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:53:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:54:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:55:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:56:			a = data.ImplicitValue;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:57:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:58:		effect = new 
+SimpleEffect(GameContext.GetResource(target), a, m, EffectNames.Linear, float.Parse(data.ImplicitDiminish, 
+CultureInfo.InvariantCulture));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:59:		Description = data.ImplicitDescr;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:60:		isInt = data.IsAdditive();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:61:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:62:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:63:	public Affix(Affix original)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:64:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:65:		target = original.GetTarget();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:66:		effect = new SimpleEffect(original.effect.target, 
+original.effect.add, original.effect.mult, EffectNames.Linear, original.effect.pow_diminishing);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:67:		Description = original.Description;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:68:		range = original.range;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:69:		modelId = original.modelId;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:70:		isInt = original.isInt;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:71:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:72:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:73:	public string GetModelId()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:74:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:75:		return modelId;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:77:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:78:	public void Apply()
+
+
+
+
+----- PATTERN: Diminish -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:31:		if (!string.IsNullOrEmpty(model.Int))
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:32:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:33:			num2 = Mathf.RoundToInt(num);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:34:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:35:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:36:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:37:			num3 = num;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:38:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:39:		effect = new 
+SimpleEffect(GameContext.GetResource(target), num2, num3, EffectNames.Linear, model.Diminish);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:40:		Description = model.Description;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:41:		modelId = model.Id;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:42:		isInt = model.IsInt();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:43:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:44:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:45:	public Affix(MythicData data)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:46:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:47:		target = data.ImplicitTarget;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:48:		BigNumber a = 0.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:49:		BigNumber m = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:50:		if (!data.IsAdditive())
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:51:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:52:			m = data.ImplicitValue;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:53:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:54:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:55:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:56:			a = data.ImplicitValue;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:57:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:58:		effect = new 
+SimpleEffect(GameContext.GetResource(target), a, m, EffectNames.Linear, float.Parse(data.ImplicitDiminish, 
+CultureInfo.InvariantCulture));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:59:		Description = data.ImplicitDescr;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:60:		isInt = data.IsAdditive();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:61:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:62:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:63:	public Affix(Affix original)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:64:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:65:		target = original.GetTarget();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:66:		effect = new SimpleEffect(original.effect.target, 
+original.effect.add, original.effect.mult, EffectNames.Linear, original.effect.pow_diminishing);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:67:		Description = original.Description;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:68:		range = original.range;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:69:		modelId = original.modelId;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:70:		isInt = original.isInt;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:71:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:72:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:73:	public string GetModelId()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:74:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:75:		return modelId;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:77:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:78:	public void Apply()
+
+
+
+
+----- PATTERN: efficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:85:		effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:86:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:87:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:88:	public void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:89:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:98:	public void SetGilding(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:99:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:100:		effect.SetGilding(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:101:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:102:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:103:	public Variable GetGilding()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:104:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:105:		return effect.gilding;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:106:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:107:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:108:	public Variable GetEfficiency()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:109:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:110:		return effect.efficiency;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:111:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:112:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:113:	public string GetTarget()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:114:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:115:		return target;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:116:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:117:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:118:	public float GetRange()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:119:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:120:		return range;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:121:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:122:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:127:			key = "int";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:128:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:129:		return effect.Preview(key);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:130:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:131:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:132:	protected override string ReplaceMatch(Match m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:133:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:134:		string text = base.ReplaceMatch(m);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:135:		if (effect.GetEfficiency().Value > 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:136:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:137:			text = text + " (+" + effect.Preview("e") + ")";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:138:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:139:		return text;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:140:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:141:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:142:	public SaveData Save()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:143:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:144:		return new SaveData
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:145:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:146:			id = modelId,
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:147:			v = range
+
+
+
+
+----- PATTERN: Efficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:85:		effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:86:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:87:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:88:	public void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:89:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:98:	public void SetGilding(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:99:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:100:		effect.SetGilding(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:101:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:102:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:103:	public Variable GetGilding()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:104:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:105:		return effect.gilding;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:106:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:107:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:108:	public Variable GetEfficiency()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:109:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:110:		return effect.efficiency;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:111:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:112:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:113:	public string GetTarget()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:114:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:115:		return target;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:116:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:117:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:118:	public float GetRange()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:119:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:120:		return range;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:121:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:122:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:127:			key = "int";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:128:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:129:		return effect.Preview(key);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:130:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:131:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:132:	protected override string ReplaceMatch(Match m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:133:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:134:		string text = base.ReplaceMatch(m);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:135:		if (effect.GetEfficiency().Value > 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:136:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:137:			text = text + " (+" + effect.Preview("e") + ")";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:138:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:139:		return text;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:140:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:141:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:142:	public SaveData Save()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:143:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:144:		return new SaveData
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:145:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:146:			id = modelId,
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:147:			v = range
+
+
+
+
+----- PATTERN: gild -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:98:	public void SetGilding(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:99:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:100:		effect.SetGilding(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:101:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:102:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:103:	public Variable GetGilding()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:104:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:105:		return effect.gilding;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:106:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:107:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:108:	public Variable GetEfficiency()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:109:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:110:		return effect.efficiency;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:111:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:112:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:113:	public string GetTarget()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:114:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:115:		return target;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:116:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:117:
+
+
+
+
+----- PATTERN: Gild -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:98:	public void SetGilding(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:99:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:100:		effect.SetGilding(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:101:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:102:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:103:	public Variable GetGilding()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:104:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:105:		return effect.gilding;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:106:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:107:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:108:	public Variable GetEfficiency()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:109:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:110:		return effect.efficiency;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:111:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:112:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:113:	public string GetTarget()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:114:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:115:		return target;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:116:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:117:
+
+
+
+
+----- PATTERN: Apply -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:70:		isInt = original.isInt;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:71:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:72:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:73:	public string GetModelId()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:74:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:75:		return modelId;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:77:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:78:	public void Apply()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:79:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:80:		effect.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:81:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:82:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:83:	public void Delete()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:84:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:85:		effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:86:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:87:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:88:	public void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:89:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+
+
+
+
+----- PATTERN: Delete -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:75:		return modelId;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:76:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:77:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:78:	public void Apply()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:79:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:80:		effect.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:81:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:82:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:83:	public void Delete()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:84:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:85:		effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:86:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:87:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:88:	public void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:89:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+
+
+
+
+----- PATTERN: Update -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:80:		effect.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:81:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:82:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:83:	public void Delete()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:84:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:85:		effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:86:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:87:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:88:	public void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:89:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:98:	public void SetGilding(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:99:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:100:		effect.SetGilding(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:101:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:102:
+
+
+
+
+----- PATTERN: Change -----
+
+
+----- PATTERN: SetEfficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:85:		effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:86:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:87:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:88:	public void Update()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:89:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:98:	public void SetGilding(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:99:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:100:		effect.SetGilding(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:101:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:102:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:103:	public Variable GetGilding()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:104:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:105:		return effect.gilding;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:106:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:107:
+
+
+
+
+----- PATTERN: SetGilding -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:90:		effect.Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:91:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:92:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:93:	public void SetEfficiency(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:94:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:95:		effect.SetEfficiency(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:97:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:98:	public void SetGilding(Variable eff)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:99:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:100:		effect.SetGilding(eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:101:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:102:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:103:	public Variable GetGilding()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:104:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:105:		return effect.gilding;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:106:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:107:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:108:	public Variable GetEfficiency()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:109:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:110:		return effect.efficiency;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:111:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Affix.cs:112:
+
+
+
+
+----- PATTERN: addendum -----
+
+
+----- PATTERN: multiplier -----
+
+
+----- PATTERN: Addendum -----
+
+
+----- PATTERN: Multiplier -----
+

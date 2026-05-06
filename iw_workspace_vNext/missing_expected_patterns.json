@@ -1,0 +1,8 @@
+{
+  "missing_logic_patterns": [
+    "**/Assembly-CSharp/*Enums.cs"
+  ],
+  "missing_data_patterns": [
+    "**/Resources/jsonfiles/*.json"
+  ]
+}

@@ -1,0 +1,201 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: Efficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: gild -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: Gild -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: Apply -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: Delete -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: Update -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: Change -----
+
+
+----- PATTERN: SetEfficiency -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: SetGilding -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:1:public interface IEffect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:2:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:3:	void Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:4:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:5:	void SetEfficiency(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:6:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:7:	void SetGilding(Variable eff);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:8:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:9:	void Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:10:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:11:	void Update();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:12:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:13:	string Preview(string key = "");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\IEffect.cs:14:}
+
+
+
+
+----- PATTERN: addendum -----
+
+
+----- PATTERN: multiplier -----
+
+
+----- PATTERN: Addendum -----
+
+
+----- PATTERN: Multiplier -----
+

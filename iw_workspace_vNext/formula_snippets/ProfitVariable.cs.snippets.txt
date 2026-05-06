@@ -1,0 +1,185 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+
+----- PATTERN: Efficiency -----
+
+
+----- PATTERN: gild -----
+
+
+----- PATTERN: Gild -----
+
+
+----- PATTERN: Apply -----
+
+
+----- PATTERN: Delete -----
+
+
+----- PATTERN: Update -----
+
+
+----- PATTERN: Change -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:5:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:6:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:7:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:8:	public ProfitVariable(string v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:9:		: base(v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:10:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:11:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:12:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:13:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:14:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:15:		base.Change(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:16:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:18:	public new void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:19:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:20:		base.SetAdd(a);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:21:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:22:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:23:	public new void SetMult(BigNumber m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:24:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:25:		base.SetMult(m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:26:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:27:
+
+
+
+
+----- PATTERN: SetEfficiency -----
+
+
+----- PATTERN: SetGilding -----
+
+
+----- PATTERN: addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:5:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:6:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:7:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:8:	public ProfitVariable(string v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:9:		: base(v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:10:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:11:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:12:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:13:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:14:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:15:		base.Change(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:16:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:18:	public new void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:19:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:20:		base.SetAdd(a);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:21:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:22:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:23:	public new void SetMult(BigNumber m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:24:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:25:		base.SetMult(m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:26:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:27:
+
+
+
+
+----- PATTERN: multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:5:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:6:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:7:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:8:	public ProfitVariable(string v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:9:		: base(v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:10:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:11:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:12:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:13:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:14:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:15:		base.Change(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:16:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:18:	public new void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:19:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:20:		base.SetAdd(a);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:21:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:22:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:23:	public new void SetMult(BigNumber m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:24:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:25:		base.SetMult(m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:26:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:27:
+
+
+
+
+----- PATTERN: Addendum -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:5:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:6:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:7:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:8:	public ProfitVariable(string v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:9:		: base(v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:10:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:11:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:12:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:13:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:14:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:15:		base.Change(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:16:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:18:	public new void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:19:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:20:		base.SetAdd(a);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:21:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:22:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:23:	public new void SetMult(BigNumber m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:24:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:25:		base.SetMult(m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:26:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:27:
+
+
+
+
+----- PATTERN: Multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:5:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:6:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:7:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:8:	public ProfitVariable(string v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:9:		: base(v)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:10:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:11:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:12:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:13:	public override void Change(BigNumber 
+addendum, BigNumber multiplier)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:14:	{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:15:		base.Change(addendum, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:16:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:18:	public new void SetAdd(BigNumber a)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:19:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:20:		base.SetAdd(a);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:21:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:22:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:23:	public new void SetMult(BigNumber m)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:24:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:25:		base.SetMult(m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:26:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ProfitVariable.cs:27:
+
+
+

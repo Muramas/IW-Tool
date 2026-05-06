@@ -1,0 +1,765 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+
+----- PATTERN: Efficiency -----
+
+
+----- PATTERN: gild -----
+
+
+----- PATTERN: Gild -----
+
+
+----- PATTERN: Apply -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:1:using UnityEngine;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:2:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:3:public static class EffectFactory
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:4:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:5:	public delegate void effect_action(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:7:	public delegate string 
+effect_preview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:8:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:9:	public static Effect Create(effect_action 
+apply, effect_action delete, effect_preview preview = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:10:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:11:		return new Effect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:12:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:13:			preview = preview,
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:14:			apply = apply,
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:15:			delete = delete
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:16:		};
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:17:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:18:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:19:	public static void Linear(Variable v, 
+BigNumber a, BigNumber m, Variable w = null, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:20:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:21:		if (e != null && e.Value != 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:22:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:23:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:24:			if (m != 1.0 || m != 0.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:25:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:26:				if (w == null)
+
+
+
+
+----- PATTERN: Delete -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:1:using UnityEngine;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:2:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:3:public static class EffectFactory
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:4:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:5:	public delegate void effect_action(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:6:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:7:	public delegate string 
+effect_preview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:8:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:9:	public static Effect Create(effect_action 
+apply, effect_action delete, effect_preview preview = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:10:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:11:		return new Effect
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:12:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:13:			preview = preview,
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:14:			apply = apply,
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:15:			delete = delete
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:16:		};
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:17:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:18:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:19:	public static void Linear(Variable v, 
+BigNumber a, BigNumber m, Variable w = null, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:20:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:21:		if (e != null && e.Value != 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:22:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:23:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:24:			if (m != 1.0 || m != 0.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:25:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:26:				if (w == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:27:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:45:			v.Change(a, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:46:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:47:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:48:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:49:			v.Change(a * w.Value, 1.0 + m * w.Value);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:50:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:51:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:52:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:53:	public static void LinearDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w = null, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:54:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:55:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:56:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:57:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:58:			if (m != 1.0 || m != 0.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:59:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:60:				if (w == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:61:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:62:					if (m >= 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:63:					{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:64:						m = 1.0 + (m - 1.0) * e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:65:					}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:156:		BigNumber bigNumber = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:157:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:158:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:159:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:160:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:161:		v.Change(0.0, 1.0 + bigNumber * (a * 
+(w.Value + 1.0)).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:162:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:163:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:164:	public static void PowerDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:165:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:166:		BigNumber bigNumber = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:167:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:168:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:169:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:170:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:171:		v.Change(0.0, 1.0 / (1.0 + bigNumber * 
+(a * (w.Value + 1.0)).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:172:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:173:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:174:	public static string 
+PowerPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:175:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:176:		BigNumber bigNumber = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:189:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:190:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:191:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:192:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:193:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:194:		v.Change(0.0, 1.0 + a * (w.Value + 
+1.0).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:195:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:196:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:197:	public static void PowerADelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:198:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:199:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:200:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:201:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:202:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:203:		v.Change(0.0, 1.0 / (1.0 + a * (w.Value 
++ 1.0).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:204:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:205:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:206:	public static string 
+PowerAPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:207:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:208:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:209:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:220:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:221:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:222:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:223:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:224:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:225:		v.Change(a * (w.Value + 
+1.0).Pow(m.ToDouble()), 1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:226:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:227:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:228:	public static void 
+AdditivePowerDelete(Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:229:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:230:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:231:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:232:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:233:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:234:		v.Change(-a * (w.Value + 
+1.0).Pow(m.ToDouble()), 1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:235:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:236:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:237:	public static string 
+AdditivePowerPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:238:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:239:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:240:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:251:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:252:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:253:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:254:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:255:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:256:		v.Change(0.0, 1.0 + a * new 
+BigNumber((w.Value + 1.0).Log10()).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:257:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:258:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:259:	public static void Log10Delete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:260:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:261:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:262:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:263:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:264:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:265:		v.Change(0.0, 1.0 / (1.0 + a * new 
+BigNumber((w.Value + 1.0).Log10()).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:266:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:267:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:268:	public static string 
+Log10Preview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:269:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:270:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:271:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:282:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:283:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:284:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:285:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:286:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:287:		v.Change(0.0, 1.0 + a * new 
+BigNumber((w.Value + 1.0).Ln()).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:288:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:289:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:290:	public static void LnDelete(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:291:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:292:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:293:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:294:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:295:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:296:		v.Change(0.0, 1.0 / (1.0 + a * new 
+BigNumber((w.Value + 1.0).Ln()).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:297:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:298:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:299:	public static string LnPreview(BigNumber 
+a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:300:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:301:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:302:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:313:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:314:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:315:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:316:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:317:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:318:		v.Change(0.0, 1.0 + (a * w.Value + 
+1.0).Log_a(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:319:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:320:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:321:	public static void LogADelete(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:322:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:323:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:324:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:325:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:326:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:327:		v.Change(0.0, 1.0 / (1.0 + (a * w.Value 
++ 1.0).Log_a(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:328:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:329:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:330:	public static string 
+LogAPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:331:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:332:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:333:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:346:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:347:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:348:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:349:		int num = 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:350:		num = ((!(w is VariableInt)) ? 
+w.Value.ToInt() : (w as VariableInt).ValueInt);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:351:		v.Change(0.0, a * (m + 1.0).Pow(num));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:352:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:353:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:354:	public static void 
+PowerIntWDelete(Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:355:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:356:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:357:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:358:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:359:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:360:		int num = 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:361:		num = ((!(w is VariableInt)) ? 
+w.Value.ToInt() : (w as VariableInt).ValueInt);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:362:		v.Change(0.0, 1.0 / (a * (m + 
+1.0).Pow(num)));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:363:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:364:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:365:	public static string 
+PowerIntWPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:366:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:383:		BigNumber multiplier = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:384:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:385:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:386:			multiplier *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:387:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:388:		v.Change(0.0, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:389:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:390:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:391:	public static void PowerWDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:392:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:393:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:394:		BigNumber bigNumber = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:395:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:396:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:397:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:398:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:399:		v.Change(0.0, 1.0 / bigNumber);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:400:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:401:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:402:	public static string 
+PowerWPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:403:	{
+
+
+
+
+----- PATTERN: Update -----
+
+
+----- PATTERN: Change -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:37:				else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:38:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:39:					m *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:40:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:41:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:42:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:43:		if (w == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:44:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:45:			v.Change(a, m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:46:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:47:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:48:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:49:			v.Change(a * w.Value, 1.0 + m * w.Value);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:50:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:51:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:52:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:53:	public static void LinearDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w = null, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:54:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:55:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:56:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:57:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:58:			if (m != 1.0 || m != 0.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:59:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:60:				if (w == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:61:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:77:		if (w == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:78:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:79:			if (m == 0.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:80:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:81:				Debug.Log("/0 v= " + v.ToString() + 
+v.Value.ToReadableString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:82:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:83:			else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:84:			{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:85:				v.Change(-a, 1.0 / m);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:86:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:87:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:88:		else if (1.0 + m * w.Value == 0.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:89:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:90:			Debug.Log("ayayaayaya");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:91:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:92:		else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:93:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:94:			v.Change(-a * w.Value, 1.0 / (1.0 + m * 
+w.Value));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:95:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:96:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:97:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:98:	public static string 
+LinearPreview(BigNumber a, BigNumber m, Variable w = null, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:99:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:100:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:101:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:102:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:103:			if (m != 1.0 || m != 0.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:104:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:105:				if (w == null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:106:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:153:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:154:	public static void Power(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:155:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:156:		BigNumber bigNumber = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:157:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:158:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:159:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:160:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:161:		v.Change(0.0, 1.0 + bigNumber * (a * 
+(w.Value + 1.0)).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:162:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:163:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:164:	public static void PowerDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:165:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:166:		BigNumber bigNumber = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:167:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:168:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:169:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:170:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:171:		v.Change(0.0, 1.0 / (1.0 + bigNumber * 
+(a * (w.Value + 1.0)).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:172:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:173:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:174:	public static string 
+PowerPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:175:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:176:		BigNumber bigNumber = 1.0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:177:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:178:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:179:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:180:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:181:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:182:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:183:			return (100.0 * bigNumber * (a * 
+(w.Value + 1.0)).Pow(m.ToDouble())).ToReadableString() + "%";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:186:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:187:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:188:	public static void PowerA(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:189:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:190:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:191:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:192:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:193:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:194:		v.Change(0.0, 1.0 + a * (w.Value + 
+1.0).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:195:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:196:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:197:	public static void PowerADelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:198:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:199:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:200:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:201:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:202:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:203:		v.Change(0.0, 1.0 / (1.0 + a * (w.Value 
++ 1.0).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:204:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:205:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:206:	public static string 
+PowerAPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:207:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:208:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:209:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:210:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:211:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:212:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:213:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:214:			return (100.0 * a * (w.Value + 
+1.0).Pow(m.ToDouble())).ToReadableString() + "%";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:215:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:217:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:218:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:219:	public static void AdditivePower(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:220:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:221:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:222:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:223:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:224:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:225:		v.Change(a * (w.Value + 
+1.0).Pow(m.ToDouble()), 1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:226:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:227:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:228:	public static void 
+AdditivePowerDelete(Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:229:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:230:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:231:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:232:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:233:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:234:		v.Change(-a * (w.Value + 
+1.0).Pow(m.ToDouble()), 1.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:235:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:236:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:237:	public static string 
+AdditivePowerPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:238:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:239:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:240:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:241:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:242:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:243:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:244:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:245:			return (a * (w.Value + 
+1.0).Pow(m.ToDouble())).ToReadableString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:246:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:248:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:249:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:250:	public static void Log10(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:251:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:252:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:253:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:254:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:255:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:256:		v.Change(0.0, 1.0 + a * new 
+BigNumber((w.Value + 1.0).Log10()).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:257:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:258:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:259:	public static void Log10Delete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:260:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:261:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:262:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:263:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:264:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:265:		v.Change(0.0, 1.0 / (1.0 + a * new 
+BigNumber((w.Value + 1.0).Log10()).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:266:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:267:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:268:	public static string 
+Log10Preview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:269:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:270:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:271:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:272:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:273:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:274:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:275:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:276:			return (100.0 * a * new 
+BigNumber((w.Value + 1.0).Log10()).Pow(m.ToDouble())).Abs().ToReadableString() + "%";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:277:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:279:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:280:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:281:	public static void Ln(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:282:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:283:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:284:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:285:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:286:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:287:		v.Change(0.0, 1.0 + a * new 
+BigNumber((w.Value + 1.0).Ln()).Pow(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:288:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:289:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:290:	public static void LnDelete(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:291:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:292:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:293:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:294:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:295:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:296:		v.Change(0.0, 1.0 / (1.0 + a * new 
+BigNumber((w.Value + 1.0).Ln()).Pow(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:297:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:298:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:299:	public static string LnPreview(BigNumber 
+a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:300:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:301:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:302:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:303:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:304:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:305:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:306:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:307:			return (100.0 * a * new 
+BigNumber((w.Value + 1.0).Ln()).Pow(m.ToDouble())).ToReadableString() + "%";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:308:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:310:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:311:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:312:	public static void LogA(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:313:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:314:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:315:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:316:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:317:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:318:		v.Change(0.0, 1.0 + (a * w.Value + 
+1.0).Log_a(m.ToDouble()));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:319:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:320:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:321:	public static void LogADelete(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:322:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:323:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:324:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:325:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:326:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:327:		v.Change(0.0, 1.0 / (1.0 + (a * w.Value 
++ 1.0).Log_a(m.ToDouble())));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:328:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:329:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:330:	public static string 
+LogAPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:331:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:332:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:333:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:334:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:335:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:336:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:337:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:338:			return new BigNumber(100.0 * (a * 
+w.Value + 1.0).Log_a(m.ToDouble())).ToReadableString() + "%";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:339:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:343:	public static void PowerIntW(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:344:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:345:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:346:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:347:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:348:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:349:		int num = 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:350:		num = ((!(w is VariableInt)) ? 
+w.Value.ToInt() : (w as VariableInt).ValueInt);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:351:		v.Change(0.0, a * (m + 1.0).Pow(num));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:352:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:353:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:354:	public static void 
+PowerIntWDelete(Variable v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:355:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:356:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:357:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:358:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:359:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:360:		int num = 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:361:		num = ((!(w is VariableInt)) ? 
+w.Value.ToInt() : (w as VariableInt).ValueInt);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:362:		v.Change(0.0, 1.0 / (a * (m + 
+1.0).Pow(num)));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:363:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:364:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:365:	public static string 
+PowerIntWPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:366:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:367:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:368:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:369:			a *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:370:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:371:		int num = 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:372:		num = ((!(w is VariableInt)) ? 
+w.Value.ToInt() : (w as VariableInt).ValueInt);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:373:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:374:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:380:	public static void PowerW(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:381:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:382:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:383:		BigNumber multiplier = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:384:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:385:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:386:			multiplier *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:387:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:388:		v.Change(0.0, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:389:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:390:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:391:	public static void PowerWDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:392:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:393:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:394:		BigNumber bigNumber = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:395:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:396:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:397:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:398:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:399:		v.Change(0.0, 1.0 / bigNumber);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:400:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:401:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:402:	public static string 
+PowerWPreview(BigNumber a, BigNumber m, Variable w, Variable e = null, bool asnumber = false)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:403:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:404:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:405:		BigNumber bigNumber = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:406:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:407:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:408:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:409:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:410:		if (!asnumber)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:411:		{
+
+
+
+
+----- PATTERN: SetEfficiency -----
+
+
+----- PATTERN: SetGilding -----
+
+
+----- PATTERN: addendum -----
+
+
+----- PATTERN: multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:375:			return (100.0 * (a * (m + 1.0).Pow(num) 
+- 1.0)).ToReadableString() + "%";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:376:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:377:		return "0@" + (a * (m + 
+1.0).Pow(num)).ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:378:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:379:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:380:	public static void PowerW(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:381:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:382:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:383:		BigNumber multiplier = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:384:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:385:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:386:			multiplier *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:387:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:388:		v.Change(0.0, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:389:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:390:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:391:	public static void PowerWDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:392:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:393:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:394:		BigNumber bigNumber = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:395:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:396:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:397:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:398:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:399:		v.Change(0.0, 1.0 / bigNumber);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:400:	}
+
+
+
+
+----- PATTERN: Addendum -----
+
+
+----- PATTERN: Multiplier -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:375:			return (100.0 * (a * (m + 1.0).Pow(num) 
+- 1.0)).ToReadableString() + "%";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:376:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:377:		return "0@" + (a * (m + 
+1.0).Pow(num)).ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:378:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:379:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:380:	public static void PowerW(Variable v, 
+BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:381:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:382:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:383:		BigNumber multiplier = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:384:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:385:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:386:			multiplier *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:387:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:388:		v.Change(0.0, multiplier);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:389:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:390:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:391:	public static void PowerWDelete(Variable 
+v, BigNumber a, BigNumber m, Variable w, Variable e = null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:392:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:393:		int x = Mathf.FloorToInt((w.Value * 
+m).ToFloat());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:394:		BigNumber bigNumber = a.Pow(x);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:395:		if (e != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:396:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:397:			bigNumber *= e.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:398:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:399:		v.Change(0.0, 1.0 / bigNumber);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\EffectFactory.cs:400:	}
+
+
+

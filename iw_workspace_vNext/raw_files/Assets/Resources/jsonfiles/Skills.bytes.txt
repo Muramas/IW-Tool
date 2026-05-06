@@ -1,0 +1,765 @@
+  [
+    {
+      "Key": "MagicMissile",
+      "Name": "Magic Missile",
+      "Icon": "MagicMissile",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "3",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "SpellFocus",
+      "Name": "Spell Focus",
+      "Icon": "SpellFocus",
+      "Description": "[DealDmg]{#1}\n[DrawScrolls]{2}",
+      "Cd": "2",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "LightningBolt",
+      "Name": "Lightning Bolt",
+      "Icon": "LightningBolt",
+      "Description": "[DealDmg]{#1}\n[ChargeScrolls]{50%}",
+      "Cd": "3",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "GemResonance",
+      "Name": "Gem Resonance",
+      "Icon": "GemResonance",
+      "Description": "[RestoreHealth]{#1}",
+      "Cd": "4",
+      "Duration": "0",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "RitualOfPower",
+      "Name": "Ritual of Power",
+      "Icon": "RitualOfPower",
+      "Description": "[IncreaseDrawing]{#1}",
+      "Cd": "6",
+      "Duration": "15",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "ConjureLesserElemental",
+      "Name": "Conjure Lesser Elemental",
+      "Icon": "ConjureLesserElemental",
+      "Description": "[ProtectPercentDmg]{40%}",
+      "Cd": "8",
+      "Duration": "20",
+      "SpellType": "Summoning",
+      "Target": "Self"
+    },
+    {
+      "Key": "Voidbolt",
+      "Name": "Void Bolt",
+      "Icon": "Voidbolt",
+      "Description": "[DealDmg]{#2}\n[InterruptSpell]",
+      "Cd": "5",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "2"
+    },
+    {
+      "Key": "Empower",
+      "Name": "Empower",
+      "Icon": "Empower",
+      "Description": "[IncreaseDefence]{#1}",
+      "Cd": "5",
+      "Duration": "10",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "3"
+    },
+    {
+      "Key": "FireBall",
+      "Name": "Fire Ball",
+      "Icon": "FireBall",
+      "Description": "[DealDmg]{#1}\n[DealDmgEverySec]{#2}",
+      "Cd": "7",
+      "Duration": "4",
+      "SpellType": "Evocation",
+      "LevelUnlock": "4"
+    },
+    {
+      "Key": "Counterspell",
+      "Name": "Counterspell",
+      "Icon": "CounterSpell",
+      "Description": "[DealDmg]{#1}\n[DispelEffect]",
+      "Cd": "5",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "5"
+    },
+    {
+      "Key": "MagicalWeapon",
+      "Name": "Magical Weapon",
+      "Icon": "MagicalWeapon",
+      "Description": "[IncreaseDamage]{#1}",
+      "Cd": "5",
+      "Duration": "8",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "8"
+    },
+    {
+      "Key": "SummonWoodlandCreatures",
+      "Name": "Summon Woodland Creatures",
+      "Icon": "SummonWoodlandCreatures",
+      "Description": "[DealDmgEvery2Sec]{#1}",
+      "Cd": "9",
+      "Duration": "10",
+      "SpellType": "Summoning",
+      "LevelUnlock": "10"
+    },
+    {
+      "Key": "SynteticEntity",
+      "Name": "Synthetic Entity",
+      "Icon": "SyntheticEntity",
+      "Description": "[EarnVMana]{#1}",
+      "Cd": "8",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "12"
+    },
+    {
+      "Key": "RulesOfNature",
+      "Name": "Rules Of Nature",
+      "Icon": "RulesOfNature",
+      "Description": "[ExpedIncreaseSummoning]{#1}",
+      "Cd": "12",
+      "Duration": "14",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "14"
+    },
+    {
+      "Key": "VoidLure",
+      "Name": "Void Lure",
+      "Icon": "VoidLure",
+      "Description": "[VoidLureEffect]{#1}",
+      "Cd": "7",
+      "Duration": "10",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "16"
+    },
+    {
+      "Key": "ConjureGreaterElemental",
+      "Name": "Conjure Greater Elemental",
+      "Icon": "ConjureGreaterElemental",
+      "Description": "[DealDmgEvery4Sec]{#1}",
+      "Cd": "8.5",
+      "Duration": "12",
+      "SpellType": "Summoning",
+      "LevelUnlock": "18"
+    },
+    {
+      "Key": "PrimalPower",
+      "Name": "Primal Power",
+      "Icon": "PrimalPower",
+      "Description": "[ExpedIncreaseEvocation]{#1}",
+      "Cd": "12",
+      "Duration": "14",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "20"
+    },
+    {
+      "Key": "VoidRadiance",
+      "Name": "Void Radiance",
+      "Icon": "VoidRadiance",
+      "Description": "[EarnVManaPerSec]{#1}",
+      "Cd": "14",
+      "Duration": "10",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "23"
+    },
+    {
+      "Key": "SummonGuardianOfTheCanopies",
+      "Name": "Summon Guardian Of The Canopies",
+      "Icon": "SummonGuardianOfTheCanopies",
+      "Description": "[ProtectPercentDmg]{50%}\n[DealDmgEvery3Sec]{#1}\n[GuardianOfTheCanopiesEffect]",
+      "Cd": "12",
+      "Duration": "16",
+      "SpellType": "Summoning",
+      "LevelUnlock": "26"
+    },
+    {
+      "Key": "KelphiorsBlackBeam",
+      "Name": "Kelphior's Black Beam",
+      "Icon": "KelphiorsBlackBeam",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "11",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "29"
+    },
+    {
+      "Key": "SpellStaffOfChamaon",
+      "Name": "Spellstaff Of Chamaon",
+      "Icon": "SpellStaffOfChamaon",
+      "Description": "[IncreaseCharging]{#2}\n[DrawMinor]",
+      "Cd": "12",
+      "Duration": "10",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "32"
+    },
+    {
+      "Key": "TemplarBrothers",
+      "Name": "Templar Brothers",
+      "Icon": "TemplarBrothers",
+      "Description": "[ProtectPercentDmg]{60%}\n[TemplarBrothersEffect]",
+      "Cd": "14",
+      "Duration": "10",
+      "SpellType": "Summoning",
+      "LevelUnlock": "35"
+    },
+    {
+      "Key": "DreadedScriptOfHarvest",
+      "Name": "Dreaded Script Of Harvest",
+      "Icon": "DreadedScriptOfHarvest",
+      "Description": "[ReduceEnemyDmg]{#1}",
+      "Cd": "11",
+      "Duration": "8",
+      "SpellType": "Incantation",
+      "LevelUnlock": "38"
+    },
+    {
+      "Key": "ForceOfWill",
+      "Name": "Force of Will",
+      "Icon": "ForceOfWill",
+      "Description": "[RestoreHealthEvery2Sec]{#1}",
+      "Cd": "8",
+      "Duration": "10",
+      "SpellType": "Evocation",
+      "Target": "Self",
+      "LevelUnlock": "41"
+    },
+    {
+      "Key": "RitualOfPotency",
+      "Name": "Ritual of Potency",
+      "Icon": "RitualOfPotency",
+      "Description": "[IncreaseDrawing]{#1}",
+      "Cd": "8",
+      "Duration": "6",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "44"
+    },
+    {
+      "Key": "FlashFire",
+      "Name": "Flash Fire",
+      "Icon": "FlashFire",
+      "Description": "[DealDmg]{#1}\n[ReduceEnemyVMana]{#2}",
+      "Cd": "7",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "47"
+    },
+    {
+      "Key": "HallowedWritings",
+      "Name": "Hallowed Writings",
+      "Icon": "HallowedWritings",
+      "Description": "[HallowedWritingsEffect]",
+      "Cd": "9",
+      "Duration": "0",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "50"
+    },
+    {
+      "Key": "EbonTruncheon",
+      "Name": "Ebon Truncheon",
+      "Icon": "EbonTruncheon",
+      "Description": "[IncreaseDamage]{#1}",
+      "Cd": "8",
+      "Duration": "14",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "54"
+    },
+    {
+      "Key": "SummonEvergrowingForest",
+      "Name": "Summon Evergrowing Forest",
+      "Icon": "SummonEvergrowingForest",
+      "Description": "[RestoreHealthEverySec]{#1}",
+      "Cd": "8",
+      "Duration": "10",
+      "SpellType": "Summoning",
+      "LevelUnlock": "58"
+    },
+    {
+      "Key": "Debilitate",
+      "Name": "Debilitate",
+      "Icon": "Debilitate",
+      "Description": "[DealDmg]{#1}\n[ReduceEnemySpellSpeed]{#2}",
+      "Cd": "6",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "62"
+    },
+    {
+      "Key": "RealityWarping",
+      "Name": "Reality Warping",
+      "Icon": "RealityWarping",
+      "Description": "[ConsumeVMana]{#1}\n[IncreaseCharging]{#2}",
+      "Cd": "11",
+      "Duration": "20",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "66"
+    },
+    {
+      "Key": "ConjureManabeast",
+      "Name": "Conjure Manabeast",
+      "Icon": "ConjureManabeast",
+      "Description": "[DealDmgEverySec]{#1}\n[ManabeastEffect]",
+      "Cd": "11",
+      "Duration": "13",
+      "SpellType": "Summoning",
+      "LevelUnlock": "70"
+    },
+    {
+      "Key": "KarnaphensSpellshroud",
+      "Name": "Karnaphen’s Spellshroud",
+      "Icon": "KarnaphensSpellshroud",
+      "Description": "[IncreaseDefence]{#1}",
+      "Cd": "8",
+      "Duration": "15",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "74"
+    },
+    {
+      "Key": "Nightfall",
+      "Name": "Nightfall",
+      "Icon": "Nightfall",
+      "Description": "[NightfallEffect]",
+      "Cd": "13",
+      "Duration": "14",
+      "SpellType": "Incantation",
+      "LevelUnlock": "78"
+    },
+    {
+      "Key": "Crystallization",
+      "Name": "Crystallization",
+      "Icon": "Crystallization",
+      "Description": "CrystallizationEffect",
+      "Cd": "5",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "Target": "Self",
+      "LevelUnlock": "82"
+    },
+    {
+      "Key": "VoidSyphon",
+      "Name": "Void Syphon",
+      "Icon": "VoidSyphon",
+      "Description": "[EarnVMana]{#1}",
+      "Cd": "10",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "86"
+    },
+    {
+      "Key": "ForceOfNature",
+      "Name": "Force Of Nature",
+      "Icon": "ForceOfNature",
+      "Description": "[ForceOfNatureEffect]",
+      "Cd": "15",
+      "Duration": "0",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "90"
+    },
+    {
+      "Key": "Silence",
+      "Name": "Silence",
+      "Icon": "Silence",
+      "Description": "[SilenceEffect]{#1}",
+      "Cd": "16",
+      "Duration": "6",
+      "SpellType": "Incantation",
+      "LevelUnlock": "94"
+    },
+    {
+      "Key": "SummonWingedNight",
+      "Name": "Summon Winged Night",
+      "Icon": "SummonWingedNight",
+      "Description": "[EarnVMana2Sec]{#1}",
+      "Cd": "12",
+      "Duration": "14",
+      "SpellType": "Summoning",
+      "LevelUnlock": "98"
+    },
+    {
+      "Key": "HellStorm",
+      "Name": "Hellstorm",
+      "Icon": "HellStorm",
+      "Description": "[DealDmgEverySec]{#1}",
+      "Cd": "13",
+      "Duration": "6",
+      "SpellType": "Evocation",
+      "LevelUnlock": "102"
+    },
+    {
+      "Key": "ShatteringStrike",
+      "Name": "Shattering Strike",
+      "Icon": "ShatteringStrike",
+      "Description": "[ReduceEnemyDefence]{#1}",
+      "Cd": "16",
+      "Duration": "9",
+      "SpellType": "Evocation",
+      "LevelUnlock": "106"
+    },
+    {
+      "Key": "VoidPrison",
+      "Name": "Void Prison",
+      "Icon": "VoidPrison",
+      "Description": "[VoidPrisonEffect]",
+      "Cd": "14",
+      "Duration": "10",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "110"
+    },
+    {
+      "Key": "SpiritOfValor",
+      "Name": "Spirit of Valor",
+      "Icon": "SpiritOfValor",
+      "Description": "[IncreaseSummonsDmg]{#1}",
+      "Cd": "11",
+      "Duration": "12",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "111"
+    },
+    {
+      "Key": "AlterTheLaws",
+      "Name": "Alter The Laws",
+      "Icon": "AlterTheLaws",
+      "Description": "[AlterTheLawsEffect]{#1}",
+      "Cd": "10",
+      "Duration": "8",
+      "SpellType": "Incantation",
+      "LevelUnlock": "112"
+    },
+    {
+      "Key": "Transmute",
+      "Name": "Transmute",
+      "Icon": "Transmute",
+      "Description": "[TransmuteEffect]{#1}",
+      "Cd": "14",
+      "Duration": "6",
+      "SpellType": "Incantation",
+      "LevelUnlock": "113"
+    },
+    {
+      "Key": "BattleTrance",
+      "Name": "Battle Trance",
+      "Icon": "BattleTrance",
+      "Description": "[BattleTranceEffect]",
+      "Cd": "14",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "Target": "Self",
+      "LevelUnlock": "114"
+    },
+    {
+      "Key": "HolyFervor",
+      "Name": "Holy Fervor",
+      "Icon": "HolyFervor",
+      "Description": "[HolyFervorEffect]",
+      "Cd": "13",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "Target": "Self",
+      "LevelUnlock": "115"
+    },
+    {
+      "Key": "TrueSorcery",
+      "Name": "True Sorcery",
+      "Icon": "TrueSorcery",
+      "Description": "[TrueSorceryEffect]",
+      "Cd": "17",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "Target": "Self",
+      "LevelUnlock": "116"
+    },
+    {
+      "Key": "FuriousStrike",
+      "Name": "Furious Strike",
+      "Icon": "FuriousStrike",
+      "Description": "[DealDmgAll]{#1}",
+      "Cd": "4",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "LevelUnlock": "117"
+    },
+    {
+      "Key": "ConjurePrimalElemental",
+      "Name": "Conjure Primal Elemental",
+      "Icon": "ConjurePrimalElemental",
+      "Description": "[ProtectPercentDmg]{45%}\n[DealDmgEvery4Sec]{#1}",
+      "Cd": "19",
+      "Duration": "16",
+      "SpellType": "Summoning",
+      "LevelUnlock": "118"
+    },
+    {
+      "Key": "NullZone",
+      "Name": "Null Zone",
+      "Icon": "NullZone",
+      "Description": "[NullzoneEffect]{#1}",
+      "Cd": "18",
+      "Duration": "4",
+      "SpellType": "Incantation",
+      "LevelUnlock": "119"
+    },
+    {
+      "Key": "Hellrage",
+      "Name": "Hellrage",
+      "Icon": "Hellrage",
+      "Description": "[IncreaseSummonsDmg]{#1}",
+      "Cd": "9",
+      "Duration": "6",
+      "SpellType": "Incantation",
+      "Target": "Self",
+      "LevelUnlock": "120"
+    },
+    {
+      "Key": "Bash",
+      "Name": "Bash",
+      "Icon": "MonsterSkill_Bash",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "1.9",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "Bite",
+      "Name": "Bite",
+      "Icon": "MonsterSkill_Bite",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "1.5",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "Slash",
+      "Name": "Slash",
+      "Icon": "MonsterSkill_Slash",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "2.4",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "Shot",
+      "Name": "Shot",
+      "Icon": "MonsterSkill_Shot",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "2.25",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "Stab",
+      "Name": "Stab",
+      "Icon": "MonsterSkill_Stab",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "2.5",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "Lash",
+      "Name": "Lash",
+      "Icon": "MonsterSkill_Lash",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "2",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "PoisonSpray",
+      "Name": "Poison Spray",
+      "Icon": "MonsterSkill_PoisonSpray",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "6.2",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "IceBlast",
+      "Name": "Ice Blast",
+      "Icon": "MonsterSkill_IceBlast",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "6.8",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "Block",
+      "Name": "Block",
+      "Icon": "MonsterSkill_Block",
+      "Description": "[IncreaseDefence]{#1}",
+      "Cd": "6",
+      "Duration": "6",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "Enrage",
+      "Name": "Enrage",
+      "Icon": "MonsterSkill_Enrage",
+      "Description": "[IncreaseDamage]{#1}",
+      "Cd": "6",
+      "Duration": "8",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "Rush",
+      "Name": "Rush",
+      "Icon": "MonsterSkill_Rush",
+      "Description": "[IncreaseSpeed]{#1}",
+      "Cd": "6",
+      "Duration": "6",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "Recover",
+      "Name": "Recover",
+      "Icon": "MonsterSkill_Recover",
+      "Description": "[RestoreHealth]{#1}",
+      "Cd": "7",
+      "Duration": "0",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "LightningBoltMob",
+      "Name": "Lightning Bolt",
+      "Icon": "LightningBolt",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "5",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "GemResonanceMob",
+      "Name": "Gem Resonance",
+      "Icon": "GemResonance",
+      "Description": "[RestoreHealth]{#1}",
+      "Cd": "10",
+      "Duration": "0",
+      "SpellType": "Evocation",
+      "Target": "Self"
+    },
+    {
+      "Key": "ConjureLesserElementalMob",
+      "Name": "Conjure Lesser Elemental",
+      "Icon": "ConjureLesserElemental",
+      "Description": "[ProtectPercentDmg]{100%}",
+      "Cd": "12",
+      "Duration": "10",
+      "SpellType": "Summoning",
+      "Target": "Self"
+    },
+    {
+      "Key": "CounterspellMob",
+      "Name": "Counterspell",
+      "Icon": "CounterSpell",
+      "Description": "[DealDmg]{#2}\n[DispelEffect]",
+      "Cd": "8",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "MagicalWeaponMob",
+      "Name": "Magical Weapon",
+      "Icon": "MagicalWeapon",
+      "Description": "[IncreaseDamage]{#1}",
+      "Cd": "6",
+      "Duration": "8",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "FireBallMob",
+      "Name": "Fire Ball",
+      "Icon": "FireBall",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "8",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "VoidSyphonMob",
+      "Name": "Void Syphon",
+      "Icon": "VoidSyphon",
+      "Description": "[EarnVMana]{#1}",
+      "Cd": "10",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "VoidPrisonMob",
+      "Name": "Void Prison",
+      "Icon": "VoidPrison",
+      "Description": "[VoidPrisonEnemyEffect]",
+      "Cd": "9",
+      "Duration": "10",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "VoidboltMob",
+      "Name": "Void Bolt",
+      "Icon": "Voidbolt",
+      "Description": "[DealDmg]{#1}\n[VoidBoltEnemyEffect]",
+      "Cd": "14",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "SpiritOfValorMob",
+      "Name": "Spirit of Valor",
+      "Icon": "SpiritOfValor",
+      "Description": "[IncreaseSummonsDmg]{#1}",
+      "Cd": "8",
+      "Duration": "12",
+      "SpellType": "Incantation",
+      "Target": "Self"
+    },
+    {
+      "Key": "SmiteMob",
+      "Name": "Smite",
+      "Icon": "Smite",
+      "Description": "[DealDmg]{#1}",
+      "Cd": "8",
+      "Duration": "0",
+      "SpellType": "Evocation"
+    },
+    {
+      "Key": "TemplarBrothersMob",
+      "Name": "Templar Brothers",
+      "Icon": "TemplarBrothers",
+      "Description": "[ProtectPercentDmg]{80%}\n[TemplarBrothersEffect]\n[DealDmgEvery2Sec]{#1}",
+      "Cd": "12",
+      "Duration": "10",
+      "SpellType": "Summoning"
+    }
+  ]

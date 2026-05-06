@@ -1,0 +1,62 @@
+[
+  {
+    "No": "1",
+    "Key": "Justice",
+    "Name": "Justice Of The Seventh"
+  },
+  {
+    "No": "2",
+    "Key": "Conjured",
+    "Name": "Conjurer's Chains"
+  },
+  {
+    "No": "3",
+    "Key": "Nether",
+    "Name": "Nether's Embrace"
+  },
+  {
+    "No": "4",
+    "Key": "Empowering",
+    "Name": "Power Armor"
+  },
+  {
+    "No": "5",
+    "Key": "Jester",
+    "Name": "Jester's Privilege"
+  },
+  {
+    "No": "6",
+    "Key": "Falconer",
+    "Name": "Falconer's Trust"
+  },
+  {
+    "No": "7",
+    "Key": "Dead",
+    "Name": "Ancient Bones"
+  },
+  {
+    "No": "8",
+    "Key": "Time",
+    "Name": "Time-traveler Gear"
+  },
+  {
+    "No": "9",
+    "Key": "Shadow",
+    "Name": "Regalia Of Shadow"
+  },
+  {
+    "No": "10",
+    "Key": "Forest",
+    "Name": "Blessing Of The Forest"
+  },
+  {
+    "No": "11",
+    "Key": "Myst",
+    "Name": "Raiments Of The Perfect Mind"
+  },
+  {
+    "No": "12",
+    "Key": "East",
+    "Name": "Eastern"
+  }
+]

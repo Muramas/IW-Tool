@@ -1,0 +1,11 @@
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\bin\Debug\net8.0\IdleWizard.BuildTool.Core.deps.json
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\bin\Debug\net8.0\IdleWizard.BuildTool.Core.dll
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\bin\Debug\net8.0\IdleWizard.BuildTool.Core.pdb
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\IdleWizard.BuildTool.Core.GeneratedMSBuildEditorConfig.editorconfig
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\IdleWizard.BuildTool.Core.AssemblyInfoInputs.cache
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\IdleWizard.BuildTool.Core.AssemblyInfo.cs
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\IdleWizard.BuildTool.Core.csproj.CoreCompileInputs.cache
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\IdleWizard.BuildTool.Core.dll
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\refint\IdleWizard.BuildTool.Core.dll
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\IdleWizard.BuildTool.Core.pdb
+H:\claude\idlewizard\export\gpt5\IdleWizardBuildTool_V2_FileStructurePatch\src\IdleWizard.BuildTool.Core\obj\Debug\net8.0\ref\IdleWizard.BuildTool.Core.dll

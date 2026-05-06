@@ -1,0 +1,175 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs =====
+
+----- PATTERN: diminish -----
+
+
+----- PATTERN: Diminish -----
+
+
+----- PATTERN: efficiency -----
+
+
+----- PATTERN: Efficiency -----
+
+
+----- PATTERN: gild -----
+
+
+----- PATTERN: Gild -----
+
+
+----- PATTERN: Apply -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:20:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:21:		public Bonus(int amount, string descr, 
+SimpleEffect effect)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:22:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:23:			Amount = amount;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:24:			Description = descr;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:25:			Effect = effect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:26:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:27:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:28:		public void Apply()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:29:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:30:			if (!applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:31:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:32:				applied = true;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:33:				if (Effect != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:34:				{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:35:					Effect.Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:36:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:37:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:38:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:39:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:40:		public void Remove()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:41:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:42:			if (applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:43:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:44:				applied = false;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:45:				if (Effect != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:46:				{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:47:					Effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:127:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:128:				amount++;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:129:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:130:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:131:		for (int j = 0; j < Bonuses.Count; j++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:132:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:133:			if (Bonuses[j].Amount <= amount)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:134:			{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:135:				Bonuses[j].Apply();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:136:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:137:			else
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:138:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:139:				Bonuses[j].Remove();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:140:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:141:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:142:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:143:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:144:	public void Deactivate()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:145:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:146:		isActive = false;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:147:		for (int i = 0; i < Bonuses.Count; i++)
+
+
+
+
+----- PATTERN: Delete -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:39:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:40:		public void Remove()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:41:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:42:			if (applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:43:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:44:				applied = false;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:45:				if (Effect != null)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:46:				{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:47:					Effect.Delete();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:48:				}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:49:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:50:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:51:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:52:		public string Preview()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:53:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:54:			StringBuilder stringBuilder = new 
+StringBuilder();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:55:			if (!applied)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:56:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:57:				
+stringBuilder.Append("<color=#808080ff>");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:58:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:59:			stringBuilder.Append(Amount);
+
+
+
+
+----- PATTERN: Update -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:109:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:110:		Key = key;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:111:		Bonuses = new List<Bonus>();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:112:		amount = 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:113:		Items = new List<Item>();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:114:		isActive = true;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:115:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:116:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:117:	public void UpdateSet()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:118:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:119:		if (!isActive)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:120:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:121:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:122:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:123:		amount = 0;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:124:		for (int i = 0; i < Items.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:125:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:126:			if (Items[i].active)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:127:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:128:				amount++;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:129:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:148:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:149:			Bonuses[i].Remove();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:150:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:151:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:152:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:153:	public void Activate()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:154:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:155:		isActive = true;
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:156:		UpdateSet();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:157:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:158:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:159:	public string Preview()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:160:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:161:		StringBuilder stringBuilder = new 
+StringBuilder();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:162:		stringBuilder.Append("<b>");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:163:		stringBuilder.Append(Name);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:164:		stringBuilder.AppendLine("</b>");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:165:		for (int i = 0; i < Items.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:166:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:167:			stringBuilder.Append("   ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\ItemSetBonus.cs:168:			if (!Items[i].equiped)
+
+
+
+
+----- PATTERN: Change -----
+
+
+----- PATTERN: SetEfficiency -----
+
+
+----- PATTERN: SetGilding -----
+
+
+----- PATTERN: addendum -----
+
+
+----- PATTERN: multiplier -----
+
+
+----- PATTERN: Addendum -----
+
+
+----- PATTERN: Multiplier -----
+

@@ -1,0 +1,472 @@
+﻿
+===== FILE: .\iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs =====
+
+----- PATTERN: Requirements -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:155:		
+stringBuilder.AppendLine(Exp2LevelUp.ToReadableString("F0"));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:156:		stringBuilder.AppendLine();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:157:		return stringBuilder.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:158:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:159:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:160:	public virtual string 
+Descrition_req_text()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:161:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:162:		StringBuilder stringBuilder = 
+new StringBuilder();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:163:		
+stringBuilder.Append("Requirements".Translate()).AppendLine(": ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:164:		if (Tier == 2 && 
+!GameManager.Instance.Paragon.ClassT2IsAvailable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:165:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:166:			stringBuilder.Append("Paragon 
+Level".Translate());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:167:			stringBuilder.Append(" 
+").AppendLine(GameManager.Instance.Paragon.ClassT2Req.ToString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:168:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:169:		if (RequedClasses.Count > 0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:170:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:171:			for (int i = 0; i < 
+RequedClasses.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:172:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:173:				stringBuilder.Append(" - ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:174:				stringBuilder.AppendLine(GameM
+anager.Instance.CurrentHero.HeroPanel.Find(RequedClasses[i]).Hero.Name);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:175:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:176:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:177:		
+stringBuilder.Append("Level".Translate());
+
+
+
+
+----- PATTERN: Requirement -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:155:		
+stringBuilder.AppendLine(Exp2LevelUp.ToReadableString("F0"));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:156:		stringBuilder.AppendLine();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:157:		return stringBuilder.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:158:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:159:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:160:	public virtual string 
+Descrition_req_text()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:161:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:162:		StringBuilder stringBuilder = 
+new StringBuilder();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:163:		
+stringBuilder.Append("Requirements".Translate()).AppendLine(": ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:164:		if (Tier == 2 && 
+!GameManager.Instance.Paragon.ClassT2IsAvailable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:165:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:166:			stringBuilder.Append("Paragon 
+Level".Translate());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:167:			stringBuilder.Append(" 
+").AppendLine(GameManager.Instance.Paragon.ClassT2Req.ToString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:168:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:169:		if (RequedClasses.Count > 0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:170:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:171:			for (int i = 0; i < 
+RequedClasses.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:172:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:173:				stringBuilder.Append(" - ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:174:				stringBuilder.AppendLine(GameM
+anager.Instance.CurrentHero.HeroPanel.Find(RequedClasses[i]).Hero.Name);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:175:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:176:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:177:		
+stringBuilder.Append("Level".Translate());
+
+
+
+
+----- PATTERN: SpellBook -----
+
+
+----- PATTERN: SpellType -----
+
+
+----- PATTERN: TypeBehavior -----
+
+
+----- PATTERN: Class -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:1:using System;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:2:using System.Collections.Generic;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:3:using System.Text;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:4:using UnityEngine;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:5:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:6:public class Hero : Spec
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:7:{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:8:	public HeroesNames NameKey;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:9:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:10:	public VariableInt Level;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:11:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:12:	public float LevelProgress;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:13:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:14:	public BigNumber Exp2LevelUp;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:15:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:16:	public BigNumber CurrentExp;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:18:	public string Feature;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:19:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:20:	public List<Spells> SpellList;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:21:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:22:	public List<string> 
+ClosedBuildings;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:23:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:24:	public VariableBignumber 
+experience = new VariableBignumber(0.0);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:25:
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:26:	public List<HeroesNames> 
+RequedClasses;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:27:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:28:	public Action OnApplyEffect;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:29:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:30:	protected QuotesSystem quotes;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:31:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:32:	public List<int> UpgradeFilter { 
+get; protected set; }
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:33:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:34:	public override void Init()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:35:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:36:		base.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:37:		Level = new VariableInt(1);
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:38:		RequedClasses = new 
+List<HeroesNames>();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:39:		Feature = NameKey.ToString() + " 
+Feature";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:40:		Description = NameKey.ToString() 
++ " Lore";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:41:		close_buildings();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:42:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:43:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:44:	public virtual void PostInit()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:45:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:46:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:47:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:48:	public List<string> GetAllQuotes()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:49:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:50:		List<string> list = new 
+List<string>();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:51:		foreach 
+(KeyValuePair<QuoteTrigger, HeroQuotes> item in quotes.dict)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:52:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:58:	public virtual void InitUpgrades()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:59:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:60:		UpgradeFilter = new List<int>();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:61:		UpgradeFilter.Add((int)NameKey);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:62:		if (Tier <= 1)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:63:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:64:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:65:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:66:		foreach (HeroesNames requedClass 
+in RequedClasses)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:67:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:68:			
+UpgradeFilter.Add((int)requedClass);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:69:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:70:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:71:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:72:	public void SubEffect()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:73:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:74:		VariableInt level = 
+GameManager.Instance.CurrentHero.Level;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:75:		level.OnChange = 
+(Action)Delegate.Combine(level.OnChange, new Action(update_effect));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:76:		VariableComplex abilityPower = 
+GameManager.Instance.CurrentHero.AbilityPower;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:77:		abilityPower.OnChange = 
+(Action)Delegate.Combine(abilityPower.OnChange, new Action(update_effect));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:78:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:79:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:80:	public void UnsubEffect()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:81:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:82:		VariableInt level = 
+GameManager.Instance.CurrentHero.Level;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:156:		stringBuilder.AppendLine();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:157:		return stringBuilder.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:158:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:159:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:160:	public virtual string 
+Descrition_req_text()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:161:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:162:		StringBuilder stringBuilder = 
+new StringBuilder();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:163:		
+stringBuilder.Append("Requirements".Translate()).AppendLine(": ");
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:164:		if (Tier == 2 && 
+!GameManager.Instance.Paragon.ClassT2IsAvailable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:165:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:166:			stringBuilder.Append("Paragon 
+Level".Translate());
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:167:			stringBuilder.Append(" 
+").AppendLine(GameManager.Instance.Paragon.ClassT2Req.ToString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:168:		}
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:169:		if (RequedClasses.Count > 0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:170:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:171:			for (int i = 0; i < 
+RequedClasses.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:172:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:173:				stringBuilder.Append(" - ");
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:174:				stringBuilder.AppendLine(GameM
+anager.Instance.CurrentHero.HeroPanel.Find(RequedClasses[i]).Hero.Name);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:175:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:176:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:177:		
+stringBuilder.Append("Level".Translate());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:178:		stringBuilder.Append(" ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:179:		
+stringBuilder.AppendLine(base.LevelReq.ToString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:180:		if (!Unlocked && 
+Conditions2Unlock != null && Conditions2Unlock.Count > 0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:181:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:182:			
+stringBuilder.AppendLine("Requires to unlock".Translate());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:183:			foreach (ConditionUnlock item 
+in Conditions2Unlock)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:184:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:185:				
+stringBuilder.AppendLine(item.Preview());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:186:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:187:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:188:		return stringBuilder.ToString();
+
+
+
+
+----- PATTERN: HeroClass -----
+
+
+----- PATTERN: CurrentClass -----
+
+
+----- PATTERN: Temporalist -----
+
+
+----- PATTERN: Chronomancer -----
+
+
+----- PATTERN: Voidmancer -----
+
+
+----- PATTERN: Unlock -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:172:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:173:				stringBuilder.Append(" - ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:174:				stringBuilder.AppendLine(GameM
+anager.Instance.CurrentHero.HeroPanel.Find(RequedClasses[i]).Hero.Name);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:175:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:176:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:177:		
+stringBuilder.Append("Level".Translate());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:178:		stringBuilder.Append(" ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:179:		
+stringBuilder.AppendLine(base.LevelReq.ToString());
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:180:		if (!Unlocked && 
+Conditions2Unlock != null && Conditions2Unlock.Count > 0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:181:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:182:			
+stringBuilder.AppendLine("Requires to unlock".Translate());
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:183:			foreach (ConditionUnlock item 
+in Conditions2Unlock)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:184:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:185:				
+stringBuilder.AppendLine(item.Preview());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:186:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:187:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:188:		return stringBuilder.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:189:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:190:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:191:	public string 
+AdditionalDescription()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:192:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:193:		StringBuilder stringBuilder = 
+new StringBuilder();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:194:		BigNumber value = 
+GameManager.Instance.CurrentHero.AbilityPower.Value;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:195:		if (value != 1.0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:196:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:197:			
+stringBuilder.Append("AP".Translate());
+
+
+
+
+----- PATTERN: Available -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:156:		stringBuilder.AppendLine();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:157:		return stringBuilder.ToString();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:158:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:159:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:160:	public virtual string 
+Descrition_req_text()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:161:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:162:		StringBuilder stringBuilder = 
+new StringBuilder();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:163:		
+stringBuilder.Append("Requirements".Translate()).AppendLine(": ");
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:164:		if (Tier == 2 && 
+!GameManager.Instance.Paragon.ClassT2IsAvailable)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:165:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:166:			stringBuilder.Append("Paragon 
+Level".Translate());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:167:			stringBuilder.Append(" 
+").AppendLine(GameManager.Instance.Paragon.ClassT2Req.ToString());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:168:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:169:		if (RequedClasses.Count > 0)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:170:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:171:			for (int i = 0; i < 
+RequedClasses.Count; i++)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:172:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:173:				stringBuilder.Append(" - ");
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:174:				stringBuilder.AppendLine(GameM
+anager.Instance.CurrentHero.HeroPanel.Find(RequedClasses[i]).Hero.Name);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:175:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:176:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:177:		
+stringBuilder.Append("Level".Translate());
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:178:		stringBuilder.Append(" ");
+
+
+
+
+----- PATTERN: CanCast -----
+
+
+----- PATTERN: CanUse -----
+
+
+----- PATTERN: SpellSlot -----
+
+
+----- PATTERN: Spellbar -----
+
+
+----- PATTERN: GetSpell -----
+
+
+----- PATTERN: AddSpell -----
+
+
+----- PATTERN: RemoveSpell -----
+
+
+----- PATTERN: Key -----
+
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:1:using System;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:2:using System.Collections.Generic;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:3:using System.Text;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:4:using UnityEngine;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:5:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:6:public class Hero : Spec
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:7:{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:8:	public HeroesNames NameKey;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:9:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:10:	public VariableInt Level;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:11:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:12:	public float LevelProgress;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:13:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:14:	public BigNumber Exp2LevelUp;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:15:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:16:	public BigNumber CurrentExp;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:17:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:18:	public string Feature;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:19:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:20:	public List<Spells> SpellList;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:21:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:22:	public List<string> 
+ClosedBuildings;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:31:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:32:	public List<int> UpgradeFilter { 
+get; protected set; }
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:33:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:34:	public override void Init()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:35:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:36:		base.Init();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:37:		Level = new VariableInt(1);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:38:		RequedClasses = new 
+List<HeroesNames>();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:39:		Feature = NameKey.ToString() + " 
+Feature";
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:40:		Description = NameKey.ToString() 
++ " Lore";
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:41:		close_buildings();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:42:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:43:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:44:	public virtual void PostInit()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:45:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:46:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:47:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:48:	public List<string> GetAllQuotes()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:49:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:50:		List<string> list = new 
+List<string>();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:51:		foreach 
+(KeyValuePair<QuoteTrigger, HeroQuotes> item in quotes.dict)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:52:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:53:			
+list.AddRange(item.Value.quotes);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:54:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:55:		return list;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:56:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:57:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:58:	public virtual void InitUpgrades()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:59:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:60:		UpgradeFilter = new List<int>();
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:61:		UpgradeFilter.Add((int)NameKey);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:62:		if (Tier <= 1)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:63:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:64:			return;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:65:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:66:		foreach (HeroesNames requedClass 
+in RequedClasses)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:67:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:68:			
+UpgradeFilter.Add((int)requedClass);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:69:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:70:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:71:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:72:	public void SubEffect()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:73:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:74:		VariableInt level = 
+GameManager.Instance.CurrentHero.Level;
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:75:		level.OnChange = 
+(Action)Delegate.Combine(level.OnChange, new Action(update_effect));
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:221:		LevelProgress = 
+(float)(CurrentExp / Exp2LevelUp).ToDouble();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:222:		if (Level.ValueInt > valueInt 
+&& Level.ValueInt > num + 1)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:223:		{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:224:			
+GameManager.Instance.CurrentHero.Hero.quotes.onLevelUp();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:225:			
+GameManager.Instance.CurrentHero.OnLevelUp();
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:226:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:227:		if 
+(GameManager.Instance.ChallengeManager.StatsIsOn())
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:228:		{
+> iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:229:			if (NameKey == 
+HeroesNames.Apprentice && Level.ValueInt > Statistic.ApprenticeMaxLevelRealm.ValueInt)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:230:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:231:				
+Statistic.ChangeSet(Statistic.ApprenticeMaxLevelRealm, Level.ValueInt);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:232:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:233:			if (Level.ValueInt > 
+Statistic.HeroMaxLevelAllTime.ValueInt)
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:234:			{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:235:				
+Statistic.ChangeSet(Statistic.HeroMaxLevelAllTime, Level.ValueInt);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:236:			}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:237:		}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:238:	}
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:239:
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:240:	protected virtual BigNumber 
+GetExpBuildings()
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:241:	{
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:242:		return 
+(Statistic.TotalBuildings.ValueInt * GameManager.Instance.CurrentHero.ExpManaSources.Value + 
+1.0).Pow(0.8550000190734863);
+  iw_workspace_vNext\raw_files\Scripts\Assembly-CSharp\Hero.cs:243:	}
+
+
+

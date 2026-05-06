@@ -1,0 +1,51 @@
+{
+  "found": true,
+  "file": "iw_workspace_vNext\\raw_files\\Scripts\\Assembly-CSharp\\ConditionNames.cs",
+  "enums": [
+    {
+      "name": "ConditionNames",
+      "values": [
+        {
+          "name": "More",
+          "value": "0"
+        },
+        {
+          "name": "Less",
+          "value": "1"
+        },
+        {
+          "name": "Max",
+          "value": "2"
+        },
+        {
+          "name": "Min",
+          "value": "3"
+        },
+        {
+          "name": "PetLevel",
+          "value": "4"
+        },
+        {
+          "name": "HeroLevel",
+          "value": "5"
+        },
+        {
+          "name": "SpellUse",
+          "value": "6"
+        },
+        {
+          "name": "Achieve",
+          "value": "7"
+        },
+        {
+          "name": "GodLevel",
+          "value": "8"
+        },
+        {
+          "name": "AscensionLevel",
+          "value": "9"
+        }
+      ]
+    }
+  ]
+}
