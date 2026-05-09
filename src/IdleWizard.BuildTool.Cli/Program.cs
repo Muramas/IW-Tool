@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using IdleWizard.BuildTool.Cli.Commands;
 using IdleWizard.BuildTool.Core.Data;
 using IdleWizard.BuildTool.Core.Effects;
@@ -136,11 +136,16 @@ internal static class Program
             case "--save-calculation-context":
                 SaveCalculationContextCommand.Run(args);
                 return 0;
+            case "--save-realm-memory-applied-effects":
+                SaveRealmMemoryAppliedEffectsCommand.Run(args);
+                return 0;
+			case "--calculate-build":
+                CalculateBuildCommand.Run(args);
+                return 0;
 
             case "--save-unlock-map":
                 SaveUnlockMapCommand.Run(args);
                 return 0;
-
             case "--save-upgrade-effect-map":
                 SaveUpgradeEffectMapCommand.Run(args);
                 return 0;
@@ -161,6 +166,39 @@ internal static class Program
                 SaveHeroXpMapCommand.Run(args);
                 return 0;
 
+            case "--save-progression-context":
+                SaveProgressionContextCommand.Run(args);
+                return 0;
+
+            case "--map-progression-effects":
+                MapProgressionEffectsCommand.Run(args);
+                return 0;
+
+            case "--map-attribute-effects":
+                MapAttributeEffectsCommand.Run(args);
+                return 0;
+
+            case "--map-memory-effects":
+                MapMemoryEffectsCommand.Run(args);
+                return 0;
+
+            case "--map-paramnesic-effects":
+                MapParamnesicEffectsCommand.Run(args);
+                return 0;
+
+            case "--map-imprint-heritage-spend":
+                MapImprintHeritageSpendCommand.Run(args);
+                return 0;
+
+            case "--mapping-coverage-report":
+                MappingCoverageReportCommand.Run(args);
+                return 0;
+            case "--save-attribute-target-effects":
+                SaveAttributeTargetEffectsCommand.Run(args);
+                return 0;
+            case "--save-attribute-profit-effects":
+                SaveAttributeProfitEffectsCommand.Run(args);
+                return 0;
             case "--apply-save-import-options-to-scenario":
                 ApplySaveImportOptionsToScenarioCommand.Run(args);
                 return 0;
@@ -357,7 +395,6 @@ internal static class Program
         }
 
         var workspacePath = args[1];
-
         var loader = new RawGameDataLoader();
         var summaries = loader.SummarizeWorkspace(workspacePath);
 
@@ -397,20 +434,20 @@ internal static class Program
             }
 
             Console.WriteLine(summary.File);
-            Console.WriteLine($"  ParsedJson: {summary.ParsedJson}");
-            Console.WriteLine($"  RootType: {summary.RootType}");
-            Console.WriteLine($"  RecordPath: {summary.RecordPath}");
-            Console.WriteLine($"  RecordCount: {summary.RecordCount}");
-            Console.WriteLine($"  Fields: {string.Join(", ", summary.Fields.Take(60))}");
+            Console.WriteLine($" ParsedJson: {summary.ParsedJson}");
+            Console.WriteLine($" RootType: {summary.RootType}");
+            Console.WriteLine($" RecordPath: {summary.RecordPath}");
+            Console.WriteLine($" RecordCount: {summary.RecordCount}");
+            Console.WriteLine($" Fields: {string.Join(", ", summary.Fields.Take(60))}");
 
             if (summary.Fields.Count > 60)
             {
-                Console.WriteLine($"  FieldsMore: {summary.Fields.Count - 60}");
+                Console.WriteLine($" FieldsMore: {summary.Fields.Count - 60}");
             }
 
             if (summary.Error is not null)
             {
-                Console.WriteLine($"  Error: {summary.Error}");
+                Console.WriteLine($" Error: {summary.Error}");
             }
 
             Console.WriteLine("");
@@ -435,7 +472,6 @@ internal static class Program
         }
 
         var repository = new GameDataRepository();
-
         var matchingFiles = repository.ListMatchingFiles(workspacePath, hint);
 
         Console.WriteLine($"Workspace: {workspacePath}");
@@ -444,7 +480,7 @@ internal static class Program
 
         foreach (var file in matchingFiles)
         {
-            Console.WriteLine($"  {file}");
+            Console.WriteLine($" {file}");
         }
 
         Console.WriteLine("");
@@ -460,7 +496,7 @@ internal static class Program
 
             foreach (var pair in record.Fields)
             {
-                Console.WriteLine($"  {pair.Key}: {pair.Value}");
+                Console.WriteLine($" {pair.Key}: {pair.Value}");
             }
         }
     }
@@ -502,7 +538,7 @@ internal static class Program
 
             foreach (var pair in record.Fields)
             {
-                Console.WriteLine($"  {pair.Key}: {pair.Value}");
+                Console.WriteLine($" {pair.Key}: {pair.Value}");
             }
         }
     }
@@ -535,14 +571,14 @@ internal static class Program
         {
             Console.WriteLine("");
             Console.WriteLine($"{effect.SourceKind} {effect.SourceId} {effect.SourceName}");
-            Console.WriteLine($"  SourceFile: {effect.SourceFile}");
-            Console.WriteLine($"  SourcePath: {effect.SourcePath}");
-            Console.WriteLine($"  Target: {effect.Target}");
-            Console.WriteLine($"  Effect: {effect.Effect}");
-            Console.WriteLine($"  Addendum: {effect.Addendum}");
-            Console.WriteLine($"  Multiplier: {effect.Multiplier}");
-            Console.WriteLine($"  Diminish: {effect.Diminish}");
-            Console.WriteLine($"  Notes: {effect.Notes}");
+            Console.WriteLine($" SourceFile: {effect.SourceFile}");
+            Console.WriteLine($" SourcePath: {effect.SourcePath}");
+            Console.WriteLine($" Target: {effect.Target}");
+            Console.WriteLine($" Effect: {effect.Effect}");
+            Console.WriteLine($" Addendum: {effect.Addendum}");
+            Console.WriteLine($" Multiplier: {effect.Multiplier}");
+            Console.WriteLine($" Diminish: {effect.Diminish}");
+            Console.WriteLine($" Notes: {effect.Notes}");
         }
     }
 
@@ -565,8 +601,8 @@ internal static class Program
 
         var extractor = new RawEffectExtractor();
         var converter = new RawEffectConverter();
-
         var rawEffects = extractor.Extract(workspacePath, hint);
+
         var conversions = rawEffects
             .Select(effect => converter.Convert(effect))
             .ToList();
@@ -579,7 +615,6 @@ internal static class Program
         Console.WriteLine($"MissingTarget: {conversions.Count(x => x.Status == RawEffectConversionStatus.MissingTarget)}");
         Console.WriteLine($"InvalidNumber: {conversions.Count(x => x.Status == RawEffectConversionStatus.InvalidNumber)}");
         Console.WriteLine("");
-
         Console.WriteLine("First converted/unresolved records:");
 
         foreach (var conversion in conversions.Take(count))
@@ -588,15 +623,15 @@ internal static class Program
 
             Console.WriteLine("");
             Console.WriteLine($"{conversion.Status}: {effect.SourceKind} {effect.SourceId} {effect.SourceName}");
-            Console.WriteLine($"  SourceFile: {effect.SourceFile}");
-            Console.WriteLine($"  SourcePath: {effect.SourcePath}");
-            Console.WriteLine($"  Target: {conversion.Target}");
-            Console.WriteLine($"  Effect: {effect.Effect}");
-            Console.WriteLine($"  Addendum: {conversion.Addendum}");
-            Console.WriteLine($"  Multiplier: {conversion.Multiplier}");
-            Console.WriteLine($"  Diminish: {effect.Diminish}");
-            Console.WriteLine($"  Message: {conversion.Message}");
-            Console.WriteLine($"  Notes: {effect.Notes}");
+            Console.WriteLine($" SourceFile: {effect.SourceFile}");
+            Console.WriteLine($" SourcePath: {effect.SourcePath}");
+            Console.WriteLine($" Target: {conversion.Target}");
+            Console.WriteLine($" Effect: {effect.Effect}");
+            Console.WriteLine($" Addendum: {conversion.Addendum}");
+            Console.WriteLine($" Multiplier: {conversion.Multiplier}");
+            Console.WriteLine($" Diminish: {effect.Diminish}");
+            Console.WriteLine($" Message: {conversion.Message}");
+            Console.WriteLine($" Notes: {effect.Notes}");
         }
 
         Console.WriteLine("");
@@ -611,7 +646,7 @@ internal static class Program
                 .Take(25)
         )
         {
-            Console.WriteLine($"  {group.Key}: {group.Count()}");
+            Console.WriteLine($" {group.Key}: {group.Count()}");
         }
     }
 
@@ -649,7 +684,7 @@ internal static class Program
         {
             Console.WriteLine("No item effects found for that item/tier.");
             Console.WriteLine("Try:");
-            Console.WriteLine(@"  --records .\iw_workspace_vNext Items 10");
+            Console.WriteLine(@" --records .\iw_workspace_vNext Items 10");
             return;
         }
 
@@ -661,13 +696,13 @@ internal static class Program
             var conversion = converter.Convert(rawEffect);
 
             Console.WriteLine($"{conversion.Status}: {rawEffect.SourceName}");
-            Console.WriteLine($"  SourcePath: {rawEffect.SourcePath}");
-            Console.WriteLine($"  Target: {rawEffect.Target}");
-            Console.WriteLine($"  Effect: {rawEffect.Effect}");
-            Console.WriteLine($"  Addendum: {rawEffect.Addendum}");
-            Console.WriteLine($"  Multiplier: {rawEffect.Multiplier}");
-            Console.WriteLine($"  Diminish: {rawEffect.Diminish}");
-            Console.WriteLine($"  Message: {conversion.Message}");
+            Console.WriteLine($" SourcePath: {rawEffect.SourcePath}");
+            Console.WriteLine($" Target: {rawEffect.Target}");
+            Console.WriteLine($" Effect: {rawEffect.Effect}");
+            Console.WriteLine($" Addendum: {rawEffect.Addendum}");
+            Console.WriteLine($" Multiplier: {rawEffect.Multiplier}");
+            Console.WriteLine($" Diminish: {rawEffect.Diminish}");
+            Console.WriteLine($" Message: {conversion.Message}");
             Console.WriteLine("");
 
             if (conversion.Status != RawEffectConversionStatus.Convertible)
@@ -692,7 +727,7 @@ internal static class Program
 
         foreach (var resource in context.Resources.All.OrderBy(x => x.Key))
         {
-            Console.WriteLine($"  {resource.Key}: {resource.Value.Value}");
+            Console.WriteLine($" {resource.Key}: {resource.Value.Value}");
         }
 
         var itemReport = new BuildEvaluator().Evaluate(context, convertedEffects);
@@ -703,7 +738,7 @@ internal static class Program
         foreach (var effect in itemReport.Effects)
         {
             Console.WriteLine(
-                $"  {effect.Status}: {effect.SourceId} -> {effect.TargetKey} " +
+                $" {effect.Status}: {effect.SourceId} -> {effect.TargetKey} " +
                 $"[{effect.Operation}] {effect.Value} {effect.Message}"
             );
         }
@@ -713,7 +748,7 @@ internal static class Program
 
         foreach (var resource in context.Resources.All.OrderBy(x => x.Key))
         {
-            Console.WriteLine($"  {resource.Key}: {resource.Value.Value}");
+            Console.WriteLine($" {resource.Key}: {resource.Value.Value}");
         }
 
         Console.WriteLine("");
@@ -803,21 +838,21 @@ internal static class Program
             var conversion = converter.Convert(rawEffect);
 
             Console.WriteLine($"{conversion.Status}: {rawEffect.SourceName}");
-            Console.WriteLine($"  SourcePath: {rawEffect.SourcePath}");
-            Console.WriteLine($"  Target: {rawEffect.Target}");
-            Console.WriteLine($"  Effect: {rawEffect.Effect}");
-            Console.WriteLine($"  Addendum: {rawEffect.Addendum}");
-            Console.WriteLine($"  Multiplier: {rawEffect.Multiplier}");
-            Console.WriteLine($"  Diminish: {rawEffect.Diminish}");
-            Console.WriteLine($"  Message: {conversion.Message}");
+            Console.WriteLine($" SourcePath: {rawEffect.SourcePath}");
+            Console.WriteLine($" Target: {rawEffect.Target}");
+            Console.WriteLine($" Effect: {rawEffect.Effect}");
+            Console.WriteLine($" Addendum: {rawEffect.Addendum}");
+            Console.WriteLine($" Multiplier: {rawEffect.Multiplier}");
+            Console.WriteLine($" Diminish: {rawEffect.Diminish}");
+            Console.WriteLine($" Message: {conversion.Message}");
 
             if (userValues.TryGetValue(rawEffect.Target, out var providedValue))
             {
-                Console.WriteLine($"  UserValue: {providedValue}");
+                Console.WriteLine($" UserValue: {providedValue}");
             }
             else
             {
-                Console.WriteLine("  UserValue: not provided, using 1");
+                Console.WriteLine(" UserValue: not provided, using 1");
             }
 
             Console.WriteLine("");
@@ -876,7 +911,7 @@ internal static class Program
 
         foreach (var resource in context.Resources.All.OrderBy(x => x.Key))
         {
-            Console.WriteLine($"  {resource.Key}: {resource.Value.Value}");
+            Console.WriteLine($" {resource.Key}: {resource.Value.Value}");
         }
 
         var itemReport = new BuildEvaluator().Evaluate(
@@ -890,7 +925,7 @@ internal static class Program
         foreach (var appliedEffect in itemReport.Effects)
         {
             Console.WriteLine(
-                $"  {appliedEffect.Status}: {appliedEffect.SourceId} -> {appliedEffect.TargetKey} " +
+                $" {appliedEffect.Status}: {appliedEffect.SourceId} -> {appliedEffect.TargetKey} " +
                 $"[{appliedEffect.Operation}] {appliedEffect.Value} {appliedEffect.Message}"
             );
         }
@@ -903,7 +938,7 @@ internal static class Program
             var before = beforeValues[resource.Key];
             var after = resource.Value.Value;
 
-            Console.WriteLine($"  {resource.Key}: {before} -> {after}");
+            Console.WriteLine($" {resource.Key}: {before} -> {after}");
         }
 
         Console.WriteLine("");
@@ -932,7 +967,6 @@ internal static class Program
                 CalcBigNumber.Zero,
                 CalcBigNumber.Parse("2")
             ),
-
             new LinearEffect(
                 "demo:item:missing-target",
                 "Missing.Target",
@@ -963,68 +997,43 @@ internal static class Program
     private static void PrintHelp()
     {
         Console.WriteLine("Commands:");
-        Console.WriteLine(@"  --audit .\iw_workspace_vNext\verified_source_index.json");
-        Console.WriteLine(@"  --data-summary .\iw_workspace_vNext");
-        Console.WriteLine(@"  --records .\iw_workspace_vNext Items 3");
-        Console.WriteLine(@"  --records .\iw_workspace_vNext Spells 3");
-        Console.WriteLine(@"  --records .\iw_workspace_vNext Upgrades 3");
-        Console.WriteLine(@"  --find-record .\iw_workspace_vNext Items Name SomeName");
-        Console.WriteLine(@"  --effects .\iw_workspace_vNext Items 10");
-        Console.WriteLine(@"  --convert-effects .\iw_workspace_vNext Items 10");
-        Console.WriteLine(@"  --evaluate-item .\iw_workspace_vNext 1 4");
-        Console.WriteLine(@"  --evaluate-item-values .\iw_workspace_vNext 1 4 ""Base.SoulPower=10"" ""Char.Intelligence=150""");
-        Console.WriteLine(@"  --compare-items .\iw_workspace_vNext 1:4 0:5 ""Base.SoulPower=10"" ""Char.Intelligence=150"" ""Experiment.Efficiency=20"" ""Hero.AbilityPower=100"" ""--efficiency=2"" ""--gilding=1.5""");
-        Console.WriteLine(@"  --score-items .\iw_workspace_vNext Hero.AbilityPower 1:4 0:5 ""Hero.AbilityPower=100"" ""Base.SoulPower=10"" ""Char.Intelligence=150"" ""Experiment.Efficiency=20"" ""--efficiency=2"" ""--gilding=1.5""");
-        Console.WriteLine(@"  --score-slot .\iw_workspace_vNext Head Hero.AbilityPower ""Hero.AbilityPower=100"" ""--efficiency=2"" ""--gilding=1.5"" ""--equipped=0:5""");
-        Console.WriteLine(@"  --score-slot-weighted .\iw_workspace_vNext Head ""Hero.AbilityPower@1.0"" ""Experiment.Efficiency@0.2"" ""Hero.ExpBoost@0.1"" ""Hero.AbilityPower=100"" ""Experiment.Efficiency=20"" ""Hero.ExpBoost=1"" ""--efficiency=2"" ""--gilding=1.5"" ""--equipped=0:5""");
-        Console.WriteLine(@"  --score-slot-weighted-file .\scenario_head_hero.json");
-        Console.WriteLine(@"  --enchant-value 0.15 5 5");
-        Console.WriteLine(@"  --item-enchant-value .\iw_workspace_vNext 0 5 5");
-        Console.WriteLine(@"  --enchant-plan-scenario .\scenario_head_hero.json");
-        Console.WriteLine(@"  --spell-catalog .\iw_workspace_vNext Temporal");
-        Console.WriteLine(@"  --phase-class-summary .\scenario_head_hero.json");
-        Console.WriteLine(@"  --class-spell-map .\iw_workspace_vNext Temporalist");
-        Console.WriteLine(@"  --validate-phase-spells .\scenario_head_hero.json");
-        Console.WriteLine(@"  --spell-variants .\iw_workspace_vNext Temporalist");
-        Console.WriteLine(@"  --scenario-options .\iw_workspace_vNext .\scenario_options.json");
-        Console.WriteLine(@"  --pet-options .\iw_workspace_vNext .\pet_options.json");
-        Console.WriteLine(@"  --validate-phase-pets .\scenario_head_hero.json .\pet_validation_head_hero.json");
-        Console.WriteLine(@"  --inspect-save-string .\save_export.txt .\save_inspect.json");
-        Console.WriteLine(@"  --class-source-diagnostics .\iw_workspace_vNext Temporalist");
-        Console.WriteLine(@"  --hero-impl-diagnostics .\iw_workspace_vNext Temporalist");
+        Console.WriteLine(@" --audit .\iw_workspace_vNext\verified_source_index.json");
+        Console.WriteLine(@" --data-summary .\iw_workspace_vNext");
+        Console.WriteLine(@" --records .\iw_workspace_vNext Items 3");
+        Console.WriteLine(@" --records .\iw_workspace_vNext Spells 3");
+        Console.WriteLine(@" --records .\iw_workspace_vNext Upgrades 3");
+        Console.WriteLine(@" --find-record .\iw_workspace_vNext Items Name SomeName");
+        Console.WriteLine(@" --effects .\iw_workspace_vNext Items 10");
+        Console.WriteLine(@" --convert-effects .\iw_workspace_vNext Items 10");
+        Console.WriteLine(@" --evaluate-item .\iw_workspace_vNext 1 4");
+        Console.WriteLine(@" --evaluate-item-values .\iw_workspace_vNext 1 4 ""Base.SoulPower=10"" ""Char.Intelligence=150""");
+        Console.WriteLine(@" --compare-items .\iw_workspace_vNext 1:4 0:5 ""Base.SoulPower=10"" ""Char.Intelligence=150"" ""Experiment.Efficiency=20"" ""Hero.AbilityPower=100"" ""--efficiency=2"" ""--gilding=1.5""");
+        Console.WriteLine(@" --score-items .\iw_workspace_vNext Hero.AbilityPower 1:4 0:5 ""Hero.AbilityPower=100"" ""Base.SoulPower=10"" ""Char.Intelligence=150"" ""Experiment.Efficiency=20"" ""--efficiency=2"" ""--gilding=1.5""");
+        Console.WriteLine(@" --score-slot .\iw_workspace_vNext Head Hero.AbilityPower ""Hero.AbilityPower=100"" ""--efficiency=2"" ""--gilding=1.5"" ""--equipped=0:5""");
+        Console.WriteLine(@" --score-slot-weighted .\iw_workspace_vNext Head ""Hero.AbilityPower@1.0"" ""Experiment.Efficiency@0.2"" ""Hero.ExpBoost@0.1"" ""Hero.AbilityPower=100"" ""Experiment.Efficiency=20"" ""Hero.ExpBoost=1"" ""--efficiency=2"" ""--gilding=1.5"" ""--equipped=0:5""");
+        Console.WriteLine(@" --score-slot-weighted-file .\scenario_head_hero.json");
+        Console.WriteLine(@" --enchant-value 0.15 5 5");
+        Console.WriteLine(@" --item-enchant-value .\iw_workspace_vNext 0 5 5");
+        Console.WriteLine(@" --enchant-plan-scenario .\scenario_head_hero.json");
+        Console.WriteLine(@" --spell-catalog .\iw_workspace_vNext Temporal");
+        Console.WriteLine(@" --phase-class-summary .\scenario_head_hero.json");
+        Console.WriteLine(@" --class-spell-map .\iw_workspace_vNext Temporalist");
+        Console.WriteLine(@" --validate-phase-spells .\scenario_head_hero.json");
+        Console.WriteLine(@" --spell-variants .\iw_workspace_vNext Temporalist");
+        Console.WriteLine(@" --scenario-options .\iw_workspace_vNext .\scenario_options.json");
+        Console.WriteLine(@" --pet-options .\iw_workspace_vNext .\pet_options.json");
+        Console.WriteLine(@" --validate-phase-pets .\scenario_head_hero.json .\pet_validation_head_hero.json");
+        Console.WriteLine(@" --inspect-save-string .\save_export.txt .\save_inspect.json");
+        Console.WriteLine(@" --save-progression-context .\save_export.txt .\progression_context.json");
+		Console.WriteLine(@" --calculate-build active");
+        Console.WriteLine(@" --calculate-build arcanist_risengiant_main");
+        Console.WriteLine(@" --save-realm-memory-applied-effects .\save_export.txt .\iw_workspace_vNext .\zz\realm_memory_applied_effects.json .\zz\realm_memory_owned_target_summary.json");
+        Console.WriteLine(@" --map-progression-effects .\save_export.txt .\iw_workspace_vNext .\progression_effect_map.json");
+        Console.WriteLine(@" --map-attribute-effects .\save_export.txt .\iw_workspace_vNext .\attribute_effect_map.json");
+        Console.WriteLine(@" --map-memory-effects .\save_export.txt .\iw_workspace_vNext .\memory_effect_map.json");
+        Console.WriteLine(@" --map-paramnesic-effects .\save_export.txt .\iw_workspace_vNext .\paramnesic_effect_map.json");
+        Console.WriteLine(@" --map-imprint-heritage-spend .\save_export.txt .\iw_workspace_vNext .\imprint_heritage_spend_compact.json");
+        Console.WriteLine(@" --class-source-diagnostics .\iw_workspace_vNext Temporalist");
+        Console.WriteLine(@" --hero-impl-diagnostics .\iw_workspace_vNext Temporalist");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
