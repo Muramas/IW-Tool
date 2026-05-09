@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 
 namespace IdleWizard.BuildTool.Cli.Commands;
@@ -520,7 +520,7 @@ public static class SaveUpgradeFormulaDependenciesCommand
                 "Base.PlayedTimeSession" => "TimeSession",
                 "Base.Souls" => "Souls",
 
-                "VoidMana.Collect" => "VoidManaAllTime",
+                "VoidMana.Collect" => "ClickableCollect",
                 "VoidMana.Realm" => "VoidManaRealm",
                 "VoidMana.Session" => "VoidManaSession",
                 "VoidMana" => "VoidManaAllTime",
@@ -859,3 +859,4 @@ public static class SaveUpgradeFormulaDependenciesCommand
         string Notes
     );
 }
+
